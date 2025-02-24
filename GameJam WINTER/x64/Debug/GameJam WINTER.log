@@ -1,0 +1,8 @@
+﻿  main.cpp
+  player.cpp
+C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\player.cpp(27,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\player.cpp(27,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\player.cpp(27,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\player.cpp(27,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  GameJam WINTER.vcxproj -> C:\Users\lee\source\repos\GameJam WINTER\x64\Debug\GameJam WINTER.exe
