@@ -1,5 +1,4 @@
 #include"player.h"
-#include"raylib.h"
 
 void Player::Player_Move()
 {
@@ -21,6 +20,7 @@ void Player::Player_Move()
 	if (IsKeyUp(KEY_LEFT_SHIFT)) {
 		Player_Speed = 3;
 	}
+	
 }
 
 void Player::Player_Draw() {
