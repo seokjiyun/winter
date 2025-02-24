@@ -1,9 +1,16 @@
 #pragma once
-#include"raylib.h"
+#include "raylib.h"
+#include "castle.h"
 
 class Map {
 public:
-	void Map_Draw();
-private:
+    Map();
+    void Map_Draw();
+    void SetStage(int stage);
+    int GetStage() const;
+    void SetCastle(Castle* castle);
 
+private:
+    int stage;
+    Castle* castlePtr;
 };

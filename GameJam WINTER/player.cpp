@@ -26,3 +26,18 @@ void Player::Player_Move()
 void Player::Player_Draw() {
 	DrawRectangle(Player_Pos_X, Player_Pos_Y, Player_R, Player_R, Player_Color);
 }
+
+
+Rectangle Player::GetAttackRect() const {
+	DrawRectangle( Player_Pos_X - 50, Player_Pos_Y, 50, 50,GREEN );
+	return{ Player_Pos_X - 50, Player_Pos_Y, 50, 50 };
+}
+
+void Player::Attack(Gob& gob) {
+	if (IsKeyPressed(KEY_J)) {
+		Rectangle attackRect = GetAttackRect();
+		if (CheckCollisionRecs(attackRect, gob.GetRec())) {
+			gob.hp -= 5;
+		}
+	}
+}

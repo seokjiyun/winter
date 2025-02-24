@@ -127,12 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="castle.cpp" />
     <ClCompile Include="gob.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="castle.h" />
     <ClInclude Include="gob.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="player.h" />

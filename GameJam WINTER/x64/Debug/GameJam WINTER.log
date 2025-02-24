@@ -1,14 +1,10 @@
-﻿  gob.cpp
-C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\gob.cpp(8,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\gob.cpp(8,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\gob.cpp(8,27): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\gob.cpp(8,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  main.cpp
-  map.cpp
-  player.cpp
-C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\player.cpp(27,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\player.cpp(27,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\player.cpp(27,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\player.cpp(27,16): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-  GameJam WINTER.vcxproj -> C:\Users\lee\source\repos\GameJam WINTER\x64\Debug\GameJam WINTER.exe
+﻿  player.cpp
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(27,54): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(27,44): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(27,30): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(27,16): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(32,36): warning C4244: '인수': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(32,30): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GameJam WINTER.vcxproj -> C:\Users\user\Documents\GitHub\winter\x64\Debug\GameJam WINTER.exe
+  'pwsh.exe'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+  배치 파일이 아닙니다.
