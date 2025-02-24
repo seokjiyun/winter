@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include"raylib.h"
 #include"player.h"
+#include"Witch.h"
 
 int main() {
 
@@ -8,6 +9,7 @@ int main() {
 
 	Color vcolor = WHITE;
 	Player player;
+	Witch witch;
 
 	while (!WindowShouldClose()) {
 		SetTargetFPS(60);
@@ -16,7 +18,8 @@ int main() {
 
 		player.Player_Draw();
 		player.Player_Move();
-
+		witch.Witch_Draw();
+		witch.Witch_Move();
 		EndDrawing();
 	}
 	CloseWindow();

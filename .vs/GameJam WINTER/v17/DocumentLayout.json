@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\witch.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\witch.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -13,6 +13,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\Witch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\Witch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,25 +34,52 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Witch.h",
+              "DocumentMoniker": "C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\Witch.h",
+              "RelativeDocumentMoniker": "GameJam WINTER\\Witch.h",
+              "ToolTip": "C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\Witch.h",
+              "RelativeToolTip": "GameJam WINTER\\Witch.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-24T07:07:10.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "witch.cpp",
+              "DocumentMoniker": "C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\witch.cpp",
+              "RelativeDocumentMoniker": "GameJam WINTER\\witch.cpp",
+              "ToolTip": "C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\witch.cpp",
+              "RelativeToolTip": "GameJam WINTER\\witch.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-24T07:05:08.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "player.h",
               "DocumentMoniker": "C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\player.h",
               "RelativeDocumentMoniker": "GameJam WINTER\\player.h",
               "ToolTip": "C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\player.h",
               "RelativeToolTip": "GameJam WINTER\\player.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-24T06:29:48.746Z"
+              "WhenOpened": "2025-02-24T06:29:48.746Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "player.cpp",
               "DocumentMoniker": "C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\player.cpp",
               "RelativeDocumentMoniker": "GameJam WINTER\\player.cpp",
               "ToolTip": "C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\player.cpp",
               "RelativeToolTip": "GameJam WINTER\\player.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAnwBkAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-24T06:29:38.366Z",
               "EditorCaption": ""
@@ -57,7 +92,7 @@
               "RelativeDocumentMoniker": "GameJam WINTER\\main.cpp",
               "ToolTip": "C:\\Users\\hun66\\OneDrive\\Documents\\GitHub\\winter\\GameJam WINTER\\main.cpp",
               "RelativeToolTip": "GameJam WINTER\\main.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-24T06:29:12.063Z",
               "EditorCaption": ""
