@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="castle.cpp" />
     <ClCompile Include="gob.cpp" />
+    <ClCompile Include="gob2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="Oak.cpp" />
@@ -138,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="castle.h" />
     <ClInclude Include="gob.h" />
+    <ClInclude Include="gob2.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="Oak.h" />
     <ClInclude Include="player.h" />
