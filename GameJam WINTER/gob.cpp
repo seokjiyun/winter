@@ -7,7 +7,6 @@ void Gob::Gob_Move(Vector2 target) {
     float dy = target.y - Gob_Pos_Y;
     float distance = sqrt(dx * dx + dy * dy);
     if (distance != 0) {
-       
         Gob_Pos_X += (dx / distance) * Gob_Speed;
         Gob_Pos_Y += (dy / distance) * Gob_Speed;
     }

@@ -1,9 +1,11 @@
 #include<stdio.h>
-#include"raylib.h"
-#include"player.h"
-#include"gob.h"
+#include "raylib.h"
+#include "player.h"
+#include "gob.h"
 #include "map.h"
 #include "castle.h"
+#include "witch.h"
+#include "Oak.h"
 
 int main() {
 
@@ -13,6 +15,8 @@ int main() {
 	Player player;
 	Gob gob;
 	Gob gob2;
+	Witch witch;
+	Oak oak;
 	Map map;
 	Castle castle;
 
@@ -34,11 +38,12 @@ int main() {
 		Rectangle castleRec = castle.GetRec();
 		Vector2 castleCenter = { castleRec.x + castleRec.width / 2, castleRec.y + castleRec.height / 2 };
 		gob.Gob_Move(castleCenter);
+		oak.Oak_Move(castleCenter);
 		Vector2 dummyTarget = { gob.Gob_Pos_X + 1, gob.Gob_Pos_Y };
 
 		gob.Gob_Move(dummyTarget);
 		gob.Gob_Draw();
-	
+		oak.Oak_Draw();
 
 		EndDrawing();
 	}
