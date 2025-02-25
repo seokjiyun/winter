@@ -8,7 +8,7 @@ class Castle {
 public:
     Castle();                              
     void Draw();                            
-    void UpdateCollision(Rectangle gobRec, Rectangle gob2Rec,,Rectangle oakRec, Gob& gob, Gob2& gob2, Oak& oak);
+    void UpdateCollision(Rectangle gobRec, Rectangle gob2Rec,Rectangle oakRec, Gob& gob, Gob2& gob2, Oak& oak);
 
     Rectangle GetRec() const;             
     int GetHP() const;                    

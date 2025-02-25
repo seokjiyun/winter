@@ -11,7 +11,6 @@ public:
 	void Oak_Move(Vector2 target);
 bool active = false;
 	Rectangle GetRec();
-	int hp = 50;
 
 private:
 	Color Oak_Color = DARKGREEN;

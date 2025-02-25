@@ -97,12 +97,6 @@ int main() {
 
 			}
 		}
-
-		for (int i = 0; i < NUM_OAKS; i++) {
-			if (oak[i].active && oak[i].hp > 0) {
-				castle.UpdateCollision(gob[i].GetRec(), oak[i].GetRec(), gob[i], oak[i]);
-			}
-		}
 		
 		Rectangle castleRec = castle.GetRec();
 		Vector2 castleCenter = { castleRec.x + castleRec.width / 2, castleRec.y + castleRec.height / 2 };
@@ -133,7 +127,7 @@ int main() {
 		}
 
 		for (int i = 0; i < NUM_GOBLINS; i++) {
-			player.Attack(gob[i], oak[i]);
+			player.Attack(gob[i], gob2[i],oak[i]);
 		}
 
 		for (int i = 0; i < NUM_OAKS; i++) {
@@ -144,7 +138,7 @@ int main() {
 		}
 
 		for (int i = 0; i < NUM_OAKS; i++) {
-			player.Attack(gob[i], oak[i]);
+			player.Attack(gob[i], gob2[i], oak[i]);
 		}
 
 		EndDrawing();

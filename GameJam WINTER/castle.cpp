@@ -19,12 +19,12 @@ void Castle::Draw() {
 }
 
 
-void Castle::UpdateCollision(Rectangle gobRec, Rectangle gob2Rec,Rectangle oakRec, Gob& gob,Gob2& gob2, Oak& oak) {
+void Castle::UpdateCollision(Rectangle gobRec, Rectangle gob2Rec, Rectangle oakRec, Gob& gob, Gob2& gob2, Oak& oak) {
 
     Rectangle castleRec = { x, y, width, height };
     if (CheckCollisionRecs(castleRec, gobRec)) {
         if (hp > 0) {
-            hp-=50;
+            hp -= 50;
             gob.hp = 0;
             if (hp <= 0) {
                 gameover = true;
@@ -40,11 +40,12 @@ void Castle::UpdateCollision(Rectangle gobRec, Rectangle gob2Rec,Rectangle oakRe
             }
         }
 
-    if (CheckCollisionRecs(castleRec, gob2Rec)) {
-        if (hp > 0) {
-            hp -= 50;
-            if (hp <= 0) {
-                gameover = true;
+        if (CheckCollisionRecs(castleRec, gob2Rec)) {
+            if (hp > 0) {
+                hp -= 50;
+                if (hp <= 0) {
+                    gameover = true;
+                }
             }
         }
     }
@@ -56,5 +57,4 @@ Rectangle Castle::GetRec() const {
 
 int Castle::GetHP() const {
     return hp;
-}
 }
