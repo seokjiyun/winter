@@ -22,6 +22,7 @@ int main() {
 		ClearBackground(vcolor);
 
 		map.Map_Draw();
+		map.SetCastle(&castle);
 		player.Player_Draw();
 		player.Player_Move();
 
