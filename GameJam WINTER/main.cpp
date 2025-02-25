@@ -62,7 +62,7 @@ int main() {
 		castle.Draw();
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			if (gob[i].active && gob[i].hp > 0) {
-				castle.UpdateCollision(gob[i].GetRec());
+				castle.UpdateCollision(gob[i].GetRec(), gob[i]);
 			}
 		}
 

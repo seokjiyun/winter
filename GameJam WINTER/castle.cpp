@@ -1,4 +1,7 @@
 #include "castle.h"
+#include "gob.h"
+
+
 
 Castle::Castle() : width(100), height(100),hp(1000),gameover(false){
 
@@ -11,12 +14,13 @@ void Castle::Draw() {
     DrawText(TextFormat("Castle HP: %d", hp), x, y - 30, 20, WHITE);
 }
 
-void Castle::UpdateCollision(Rectangle gobRec) {
+void Castle::UpdateCollision(Rectangle gobRec, Gob& gob) {
 
     Rectangle castleRec = { x, y, width, height };
     if (CheckCollisionRecs(castleRec, gobRec)) {
         if (hp > 0) {
             hp-=50;
+            gob.hp = 0;
             if (hp <= 0) {
                 gameover = true;
             }
