@@ -5,19 +5,19 @@ void Player::Player_Move()
 {
 	Vector2 moveDir = { 0, 0 };
 
-	if (IsKeyDown(KEY_UP)) {
+	if (IsKeyDown(KEY_W)) {
 		moveDir.y -= 1;
 	}
 
-	if (IsKeyDown(KEY_DOWN)) {
+	if (IsKeyDown(KEY_S)) {
 		moveDir.y += 1;
 	}
 
-	if (IsKeyDown(KEY_RIGHT)) {
+	if (IsKeyDown(KEY_D)) {
 		moveDir.x += 1;
 	}
 
-	if (IsKeyDown(KEY_LEFT)) {
+	if (IsKeyDown(KEY_A)) {
 		moveDir.x -= 1;
 	}
 
