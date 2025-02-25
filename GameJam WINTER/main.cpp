@@ -41,7 +41,7 @@ int main() {
 		elapsedTime += deltaTime;
 
 		
-			if (goblinsSpawned < NUM_GOBLINS && elapsedTime >= goblinsSpawned * spawnInterval) {
+			if (goblinsSpawned < NUM_GOBLINS && elapsedTime >= goblinsSpawned * spawnGobInterval) {
 				
 				gob[goblinsSpawned].Gob_Pos_X = 0;
 				gob[goblinsSpawned].Gob_Pos_Y = GetRandomValue(50, 550);
@@ -49,7 +49,7 @@ int main() {
 				goblinsSpawned++;
 			}
 
-			if()
+			//if()
 		
 		SetTargetFPS(60);
 		BeginDrawing();
