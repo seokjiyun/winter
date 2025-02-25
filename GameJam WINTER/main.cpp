@@ -5,7 +5,7 @@
 #include "map.h"
 #include "castle.h"
 #include "witch.h"
-#include "Oak.h"
+#include "oak.h"
 
 const int NUM_GOBLINS = 10;
 const int NUM_WITCHES = 3;
@@ -49,7 +49,13 @@ int main() {
 				goblinsSpawned++;
 			}
 
-			//if()
+			if (oaksSpawned < NUM_OAKS && elapsedTime >= oaksSpawned * spawnOakInterval) {
+
+				oak[oaksSpawned].Oak_Pos_X = GetRandomValue(50, 750);
+				oak[oaksSpawned].Oak_Pos_Y = 550;
+				oak[oaksSpawned].active = true;
+				oaksSpawned++;
+			}
 		
 		SetTargetFPS(60);
 		BeginDrawing();
@@ -63,17 +69,19 @@ int main() {
 		player.Player_Draw();
 		player.Player_Move();
 
-		for (int i = 0; i < NUM_GOBLINS; i++) {
-			player.Attack(gob[i]);
-		}
 
 		castle.Draw();
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			if (gob[i].active && gob[i].hp > 0) {
-				castle.UpdateCollision(gob[i].GetRec(), gob[i]);
+				castle.UpdateCollision(gob[i].GetRec(), oak[i].GetRec(), gob[i], oak[i]);
 			}
 		}
 
+		for (int i = 0; i < NUM_OAKS; i++) {
+			if (oak[i].active && oak[i].hp > 0) {
+				castle.UpdateCollision(gob[i].GetRec(), oak[i].GetRec(), gob[i], oak[i]);
+			}
+		}
 		
 		Rectangle castleRec = castle.GetRec();
 		Vector2 castleCenter = { castleRec.x + castleRec.width / 2, castleRec.y + castleRec.height / 2 };
@@ -85,7 +93,18 @@ int main() {
 		}
 
 		for (int i = 0; i < NUM_GOBLINS; i++) {
-			player.Attack(gob[i]);
+			player.Attack(gob[i], oak[i]);
+		}
+
+		for (int i = 0; i < NUM_OAKS; i++) {
+			if (oak[i].active && oak[i].hp > 0) {
+				oak[i].Oak_Move(castleCenter);
+				oak[i].Oak_Draw();
+			}
+		}
+
+		for (int i = 0; i < NUM_OAKS; i++) {
+			player.Attack(gob[i], oak[i]);
 		}
 		EndDrawing();
 	}

@@ -1,5 +1,6 @@
 #include "castle.h"
 #include "gob.h"
+#include "oak.h"
 
 
 
@@ -14,13 +15,22 @@ void Castle::Draw() {
     DrawText(TextFormat("Castle HP: %d", hp), x, y - 30, 20, WHITE);
 }
 
-void Castle::UpdateCollision(Rectangle gobRec, Gob& gob) {
+void Castle::UpdateCollision(Rectangle gobRec, Rectangle oakRec, Gob& gob, Oak& oak) {
 
     Rectangle castleRec = { x, y, width, height };
     if (CheckCollisionRecs(castleRec, gobRec)) {
         if (hp > 0) {
             hp-=50;
             gob.hp = 0;
+            if (hp <= 0) {
+                gameover = true;
+            }
+        }
+    }
+    if (CheckCollisionRecs(castleRec, oakRec)) {
+        if (hp > 0) {
+            hp -= 350;
+            oak.hp = 0;
             if (hp <= 0) {
                 gameover = true;
             }

@@ -1,4 +1,4 @@
-#include"Oak.h"
+#include"oak.h"
 #include"math.h"
 
 void Oak::Oak_Move(Vector2 target) {
@@ -13,4 +13,8 @@ void Oak::Oak_Move(Vector2 target) {
 
 void Oak::Oak_Draw() {
 	DrawRectangle(Oak_Pos_X, Oak_Pos_Y, Oak_Width, Oak_Height, Oak_Color);
+}
+
+Rectangle Oak::GetRec() {
+	return { Oak_Pos_X, Oak_Pos_Y, Oak_Width, Oak_Height };
 }

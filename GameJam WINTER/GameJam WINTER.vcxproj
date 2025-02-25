@@ -131,7 +131,7 @@
     <ClCompile Include="gob.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
-    <ClCompile Include="Oak.cpp" />
+    <ClCompile Include="oak.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="witch.cpp" />
   </ItemGroup>
@@ -139,7 +139,7 @@
     <ClInclude Include="castle.h" />
     <ClInclude Include="gob.h" />
     <ClInclude Include="map.h" />
-    <ClInclude Include="Oak.h" />
+    <ClInclude Include="oak.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="witch.h" />
   </ItemGroup>
