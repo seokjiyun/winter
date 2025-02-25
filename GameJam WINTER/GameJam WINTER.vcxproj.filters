@@ -36,6 +36,9 @@
     <ClCompile Include="oak.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gob2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="player.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="oak.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gob2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

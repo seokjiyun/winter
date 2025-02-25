@@ -1,7 +1,8 @@
 #pragma once
 #include"raylib.h"
 #include "gob.h" 
-#include "oak.h"
+#include "gob2.h" 
+#include "Oak.h" 
 
 class Player {
 public:
@@ -9,7 +10,9 @@ public:
 	void Player_Draw();
 
 	Rectangle GetAttackRect() const;
-	void Attack(Gob& gob, Oak& oak);
+
+	void Attack(Gob& gob, Gob2& gob2,Oak& oak);
+
 
 	float Player_Pos_X = 0;
 	float Player_Pos_Y = 0;

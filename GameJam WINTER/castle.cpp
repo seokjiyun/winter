@@ -1,6 +1,9 @@
 #include "castle.h"
 #include "gob.h"
+
 #include "oak.h"
+#include "gob2.h"
+
 
 
 
@@ -15,7 +18,8 @@ void Castle::Draw() {
     DrawText(TextFormat("Castle HP: %d", hp), x, y - 30, 20, WHITE);
 }
 
-void Castle::UpdateCollision(Rectangle gobRec, Rectangle oakRec, Gob& gob, Oak& oak) {
+
+void Castle::UpdateCollision(Rectangle gobRec, Rectangle gob2Rec,Rectangle oakRec, Gob& gob,Gob2& gob2, Oak& oak) {
 
     Rectangle castleRec = { x, y, width, height };
     if (CheckCollisionRecs(castleRec, gobRec)) {
@@ -27,10 +31,18 @@ void Castle::UpdateCollision(Rectangle gobRec, Rectangle oakRec, Gob& gob, Oak& 
             }
         }
     }
+
     if (CheckCollisionRecs(castleRec, oakRec)) {
         if (hp > 0) {
             hp -= 350;
-            oak.hp = 0;
+            oak.hp = 0; if (hp <= 0) {
+                gameover = true;
+            }
+        }
+
+    if (CheckCollisionRecs(castleRec, gob2Rec)) {
+        if (hp > 0) {
+            hp -= 50;
             if (hp <= 0) {
                 gameover = true;
             }
@@ -44,4 +56,5 @@ Rectangle Castle::GetRec() const {
 
 int Castle::GetHP() const {
     return hp;
+}
 }

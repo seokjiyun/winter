@@ -1,11 +1,14 @@
 #include<stdio.h>
+#include <math.h>
 #include "raylib.h"
 #include "player.h"
 #include "gob.h"
+#include "gob2.h"
 #include "map.h"
 #include "castle.h"
 #include "witch.h"
 #include "oak.h"
+
 
 const int NUM_GOBLINS = 10;
 const int NUM_WITCHES = 3;
@@ -19,6 +22,7 @@ int main() {
 	Player player;
 
 	Gob gob[NUM_GOBLINS];
+	Gob2 gob2[NUM_GOBLINS];
 	Witch witch[NUM_WITCHES];
 	Oak oak[NUM_OAKS];
 
@@ -27,6 +31,7 @@ int main() {
 
 	float elapsedTime = 0.0f;         
 	int goblinsSpawned = 0;  
+	int goblins2Spawned = 0;
 	int witchesSpawned = 0;
 	int oaksSpawned = 0;
 
@@ -48,6 +53,13 @@ int main() {
 				gob[goblinsSpawned].active = true;
 				goblinsSpawned++;
 			}
+			if (goblins2Spawned < NUM_GOBLINS && elapsedTime >= goblins2Spawned * spawnGobInterval) {
+				gob2[goblins2Spawned].Gob2_Pos_X = 0;
+				gob2[goblins2Spawned].Gob2_Pos_Y = GetRandomValue(50, 550);
+				gob2[goblins2Spawned].active = true;
+				goblins2Spawned++;
+			}
+
 
 			if (oaksSpawned < NUM_OAKS && elapsedTime >= oaksSpawned * spawnOakInterval) {
 
@@ -56,6 +68,9 @@ int main() {
 				oak[oaksSpawned].active = true;
 				oaksSpawned++;
 			}
+
+				
+			
 		
 		SetTargetFPS(60);
 		BeginDrawing();
@@ -70,10 +85,16 @@ int main() {
 		player.Player_Move();
 
 
+		for (int i = 0; i < NUM_GOBLINS; i++) {
+			player.Attack(gob[i], gob2[i], oak[i]);
+		}
+
 		castle.Draw();
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			if (gob[i].active && gob[i].hp > 0) {
-				castle.UpdateCollision(gob[i].GetRec(), oak[i].GetRec(), gob[i], oak[i]);
+
+				castle.UpdateCollision(gob[i].GetRec(), gob2[i].GetRec(),oak[i].GetRec(), gob[i], gob2[i], oak[i]);
+
 			}
 		}
 
@@ -89,6 +110,25 @@ int main() {
 			if (gob[i].active && gob[i].hp > 0) {
 				gob[i].Gob_Move(castleCenter);
 				gob[i].Gob_Draw();
+			}
+
+		}
+	
+		for (int i = 0; i < NUM_GOBLINS; i++) {
+			if (gob2[i].active && gob2[i].hp > 0) {
+				gob2[i].Gob2_Move(castleCenter);
+				gob2[i].Gob2_UpdateAttack(castleCenter);
+				gob2[i].Gob2_Draw();
+
+				if (gob2[i].projectileActive) {
+
+					if (CheckCollisionCircleRec({ gob2[i].projPosX, gob2[i].projPosY }, gob2[i].projRadius, castleRec)) {
+
+						castle.hp -= 50;
+
+						gob2[i].projectileActive = false;
+					}
+				}
 			}
 		}
 
@@ -106,6 +146,7 @@ int main() {
 		for (int i = 0; i < NUM_OAKS; i++) {
 			player.Attack(gob[i], oak[i]);
 		}
+
 		EndDrawing();
 	}
 	CloseWindow();

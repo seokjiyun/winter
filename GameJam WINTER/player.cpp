@@ -85,12 +85,24 @@ Rectangle Player::GetAttackRect() const {
 	return { Player_Pos_X + offsetX, Player_Pos_Y + offsetY, attackWidth, attackHeight };
 }
 
-void Player::Attack(Gob& gob, Oak& oak) {
-	
+
+void Player::Attack(Gob& gob, Gob2& gob2, Oak& oak) {
+	//if (IsKeyPressed(KEY_SPACE)) {
+	//	Rectangle attackRect = GetAttackRect();
+	//	if (CheckCollisionRecs(attackRect, gob.GetRec())) {
+	//		gob.hp -= 5;
+	//	}
+	//}
 	if (IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_LEFT)){
 		Rectangle attackRect = GetAttackRect();
-		if (CheckCollisionRecs(attackRect, gob.GetRec())){
+		
+		if (CheckCollisionRecs(attackRect, gob.GetRec())) {
 			gob.hp -= 5;
+		}if (CheckCollisionRecs(attackRect, gob2.GetRec())) {
+			gob2.hp -= 5;
+		}
+		if (CheckCollisionRecs(attackRect, oak.GetRec())) {
+			oak.hp -= 5;
 		}
 		if (CheckCollisionRecs(attackRect, oak.GetRec())) {
 			oak.hp -= 5;
