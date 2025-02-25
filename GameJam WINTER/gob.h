@@ -11,10 +11,12 @@ public:
 
     float Gob_Pos_X = 0;
     float Gob_Pos_Y = 100;
-    int hp = 10; 
+    int hp = 50; 
+    bool active = false;
+
 private:
     float Gob_Width = 30;
     float Gob_Height = 30;
-    float Gob_Speed = 0.1f;
+    float Gob_Speed = 0.4f;
     Color Gob_Color = GREEN;
 };

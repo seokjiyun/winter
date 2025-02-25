@@ -2,16 +2,16 @@
 
 void Player::Player_Move()
 {
-	if (IsKeyDown(KEY_W)) {
+	if (IsKeyDown(KEY_UP)) {
 		Player_Pos_Y -= Player_Speed;
 	}
-	if (IsKeyDown(KEY_S)) {
+	if (IsKeyDown(KEY_DOWN)) {
 		Player_Pos_Y += Player_Speed;
 	}
-	if (IsKeyDown(KEY_D)) {
+	if (IsKeyDown(KEY_RIGHT)) {
 		Player_Pos_X += Player_Speed;
 	}
-	if (IsKeyDown(KEY_A)) {
+	if (IsKeyDown(KEY_LEFT)) {
 		Player_Pos_X -= Player_Speed;
 	}
 	if (IsKeyDown(KEY_LEFT_SHIFT)) {
@@ -34,7 +34,7 @@ Rectangle Player::GetAttackRect() const {
 }
 
 void Player::Attack(Gob& gob) {
-	if (IsKeyPressed(KEY_J)) {
+	if (IsKeyPressed(KEY_SPACE)) {
 		Rectangle attackRect = GetAttackRect();
 		if (CheckCollisionRecs(attackRect, gob.GetRec())) {
 			gob.hp -= 5;
