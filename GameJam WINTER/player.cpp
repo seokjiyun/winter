@@ -5,19 +5,19 @@ void Player::Player_Move()
 {
 	Vector2 moveDir = { 0, 0 };
 
-	if (IsKeyDown(KEY_W)) {
+	if (IsKeyDown(KEY_UP)) {
 		moveDir.y -= 1;
 	}
 
-	if (IsKeyDown(KEY_S)) {
+	if (IsKeyDown(KEY_DOWN)) {
 		moveDir.y += 1;
 	}
 
-	if (IsKeyDown(KEY_D)) {
+	if (IsKeyDown(KEY_RIGHT)) {
 		moveDir.x += 1;
 	}
 
-	if (IsKeyDown(KEY_A)) {
+	if (IsKeyDown(KEY_LEFT)) {
 		moveDir.x -= 1;
 	}
 
@@ -26,16 +26,16 @@ void Player::Player_Move()
 		facingDirection = { moveDir.x / length, moveDir.y / length };
 	}
 
-	if (IsKeyDown(KEY_UP)) {
+	if (IsKeyDown(KEY_W)) {
 		Player_Pos_Y -= Player_Speed;
 	}
-	if (IsKeyDown(KEY_DOWN)) {
+	if (IsKeyDown(KEY_S)) {
 		Player_Pos_Y += Player_Speed;
 	}
-	if (IsKeyDown(KEY_RIGHT)) {
+	if (IsKeyDown(KEY_D)) {
 		Player_Pos_X += Player_Speed;
 	}
-	if (IsKeyDown(KEY_LEFT)) {
+	if (IsKeyDown(KEY_A)) {
 		Player_Pos_X -= Player_Speed;
 	}
 	if (IsKeyDown(KEY_LEFT_SHIFT)) {
@@ -44,7 +44,7 @@ void Player::Player_Move()
 	if (IsKeyUp(KEY_LEFT_SHIFT)) {
 		Player_Speed = 3;
 	}
-	
+
 }
 
 void Player::Player_Draw() {
@@ -58,25 +58,25 @@ Rectangle Player::GetAttackRect() const {
 	float offsetX = 0;
 	float offsetY = 0;
 
-	
+
 	if (fabs(facingDirection.x) > fabs(facingDirection.y)) {
-	
-		if (facingDirection.x > 0) { 
+
+		if (facingDirection.x > 0) {
 			offsetX = Player_R;
 			offsetY = (Player_R / 2) - (attackHeight / 2);
 		}
-		else { 
+		else {
 			offsetX = -attackWidth;
 			offsetY = (Player_R / 2) - (attackHeight / 2);
 		}
 	}
 	else {
-		
-		if (facingDirection.y > 0) { 
+
+		if (facingDirection.y > 0) {
 			offsetY = Player_R;
 			offsetX = (Player_R / 2) - (attackWidth / 2);
 		}
-		else { 
+		else {
 			offsetY = -attackHeight;
 			offsetX = (Player_R / 2) - (attackWidth / 2);
 		}
@@ -86,9 +86,15 @@ Rectangle Player::GetAttackRect() const {
 }
 
 void Player::Attack(Gob& gob) {
-	if (IsKeyPressed(KEY_SPACE)) {
+	//if (IsKeyPressed(KEY_SPACE)) {
+	//	Rectangle attackRect = GetAttackRect();
+	//	if (CheckCollisionRecs(attackRect, gob.GetRec())) {
+	//		gob.hp -= 5;
+	//	}
+	//}
+	if (IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_LEFT)){
 		Rectangle attackRect = GetAttackRect();
-		if (CheckCollisionRecs(attackRect, gob.GetRec())) {
+		if (CheckCollisionRecs(attackRect, gob.GetRec())){
 			gob.hp -= 5;
 		}
 	}
