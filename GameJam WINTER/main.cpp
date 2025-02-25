@@ -8,6 +8,8 @@
 #include "Oak.h"
 
 const int NUM_GOBLINS = 10;
+const int NUM_WITCHES = 3;
+const int NUM_OAKS = 2;
 
 int main() {
 
@@ -17,16 +19,20 @@ int main() {
 	Player player;
 
 	Gob gob[NUM_GOBLINS];
-	Witch witch;
-	Oak oak;
+	Witch witch[NUM_WITCHES];
+	Oak oak[NUM_OAKS];
 
 	Map map;
 	Castle castle;
 
 	float elapsedTime = 0.0f;         
-	int goblinsSpawned = 0;           
-	const float spawnInterval = 30.0f / NUM_GOBLINS;
+	int goblinsSpawned = 0;  
+	int witchesSpawned = 0;
+	int oaksSpawned = 0;
 
+	const float spawnGobInterval = 30.0f / NUM_GOBLINS;
+	const float spawnWitchInterval = 30.0f / NUM_WITCHES;
+	const float spawnOakInterval = 30.0f / NUM_OAKS;
 
 
 	while (!WindowShouldClose()) {
@@ -42,6 +48,8 @@ int main() {
 				gob[goblinsSpawned].active = true;
 				goblinsSpawned++;
 			}
+
+			if()
 		
 		SetTargetFPS(60);
 		BeginDrawing();
