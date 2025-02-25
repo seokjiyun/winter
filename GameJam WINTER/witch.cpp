@@ -16,6 +16,11 @@ void Witch::Witch_Move(Vector2 target) {
 }
 
 
+//Rectangle Witch::Get_Hit() {
+//    
+//}
+
+
 void Witch::Witch_Attack(bool Collision) {
     DrawCircle(Witch_AT_X, Witch_AT_Y, Witch_AT_R, Witch_AT_C);
     if (Collision) {
