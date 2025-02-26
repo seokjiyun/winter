@@ -78,10 +78,15 @@ int main() {
 			if (bushesSpawned < NUM_ITEMS && elapsedTime >= bushesSpawned * spawnItemInterval) {
 
 				bush[bushesSpawned].bush_Pos_X = GetRandomValue(50, 750);
+				item[itemsSpawned].item_Pos_X = bush[bushesSpawned].bush_Pos_X;
 				bush[bushesSpawned].bush_Pos_Y = GetRandomValue(50,550);
-				bush[bushesSpawned].active = true;
+				item[itemsSpawned].item_Pos_Y = bush[bushesSpawned].bush_Pos_Y;
+				bush[bushesSpawned].bush_active = true;
 				bushesSpawned++;
+				itemsSpawned++;
 			}
+
+
 			
 		
 		SetTargetFPS(60);
@@ -154,8 +159,11 @@ int main() {
 		}
 
 		for (int i = 0; i < NUM_ITEMS; i++) {
-			if (bush[i].active && bush[i].hp > 0) {
+			if (bush[i].bush_active && bush[i].hp > 0) {
 				bush[i].bush_Draw();
+			}
+			else if(!bush[i].bush_active && bush[i].hp <= 0) {
+				item[i].potion_Draw();
 			}
 		}
 

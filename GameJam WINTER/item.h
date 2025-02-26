@@ -22,6 +22,8 @@ private:
 	float bush_Height = 20;
 	float item_Width = 20;
 	float item_Height = 15;
+	float potion_Radius = 5;
 	Color item_Color = RED;
+	Color potion_Color = RED;
 	Color bush_Color = GREEN;
 };

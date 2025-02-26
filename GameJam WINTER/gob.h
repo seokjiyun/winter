@@ -11,6 +11,7 @@ public:
 
     float Gob_Pos_X = 0;
     float Gob_Pos_Y = 100;
+    int Gob_Damage = 50;
     int hp = 50; 
     bool active = false;
 

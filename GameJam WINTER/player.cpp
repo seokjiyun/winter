@@ -49,8 +49,8 @@ void Player::Player_Move()
 
 void Player::Player_Draw() {
 	DrawRectangle(Player_Pos_X, Player_Pos_Y, Player_R, Player_R, Player_Color);
+	DrawText(TextFormat("Hp: %d", Player_HP), Player_Pos_X, Player_Pos_Y - 10, 10, HP_Color);
 }
-
 
 Rectangle Player::GetAttackRect() const {
 	float attackWidth = 50;
@@ -81,7 +81,7 @@ Rectangle Player::GetAttackRect() const {
 			offsetX = (Player_R / 2) - (attackWidth / 2);
 		}
 	}
-	DrawRectangle(Player_Pos_X + offsetX, Player_Pos_Y + offsetY, attackWidth, attackHeight, GREEN);
+	DrawRectangle(Player_Pos_X + offsetX, Player_Pos_Y + offsetY, attackWidth, attackHeight, RED);
 	return { Player_Pos_X + offsetX, Player_Pos_Y + offsetY, attackWidth, attackHeight };
 }
 
@@ -107,6 +107,17 @@ void Player::Attack(Gob& gob, Gob2& gob2, Oak& oak, Item& bush) {
 	}
 }
 
+void Player::UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakRec, Rectangle ItemRec, Gob& gob, Gob2& gob2, Oak& oak, Item& item)
+{
+	Rectangle playerRec{ Player_Pos_X, Player_Pos_Y, Player_R, Player_R};
+	if (CheckCollisionRecs(playerRec, GobRec)) {
+		Player_HP -= gob.Gob_Damage;
+	}
+	if (CheckCollisionRecs(playerRec, OakRec)) {
+		Player_HP -= oak.Oak_Damage;
+	}
+}
+
 int Player::GetHP() const{
-	return hp;
+	return Player_HP;
 }
