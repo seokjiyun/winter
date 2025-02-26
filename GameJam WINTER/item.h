@@ -5,6 +5,7 @@ class Item {
 public:
 	void bush_Draw();
 	void potion_Draw();
+	void armory_Draw();
 
 	Rectangle GetRec();
 
@@ -15,7 +16,8 @@ public:
 	float item_Pos_Y;
 	float bush_Pos_X;
 	float bush_Pos_Y;
-
+	float potion_Heal = 30;
+	float additional_Heal = 2;
 	int hp = 15;
 private:
 	float bush_Width = 30;
@@ -23,6 +25,8 @@ private:
 	float item_Width = 20;
 	float item_Height = 15;
 	float potion_Radius = 5;
+	float armory_Hence = 50;
+	Color armory_Color = ORANGE;
 	Color item_Color = RED;
 	Color potion_Color = RED;
 	Color bush_Color = GREEN;

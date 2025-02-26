@@ -94,8 +94,6 @@ int main() {
 		ClearBackground(vcolor);
 
 
-
-
 		map.Map_Draw();
 		map.SetCastle(&castle);
 		player.Player_Draw();
@@ -135,7 +133,7 @@ int main() {
 
 					if (CheckCollisionCircleRec({ gob2[i].projPosX, gob2[i].projPosY }, gob2[i].projRadius, castleRec)) {
 
-						castle.hp -= 50;
+						castle.hp -= gob->Gob_Damage;
 
 						gob2[i].projectileActive = false;
 					}
@@ -162,7 +160,7 @@ int main() {
 			if (bush[i].bush_active && bush[i].hp > 0) {
 				bush[i].bush_Draw();
 			}
-			else if(!bush[i].bush_active && bush[i].hp <= 0) {
+			else if(bush[i].hp == 0) {
 				item[i].potion_Draw();
 			}
 		}

@@ -10,7 +10,9 @@ void Item::potion_Draw() {
 	DrawCircle(item_Pos_X, item_Pos_Y, potion_Radius, potion_Color);
 }
 
-
+void Item::armory_Draw() {
+	DrawCircle(item_Pos_X, item_Pos_Y, potion_Radius, armory_Color);
+}
 
 
 Rectangle Item::GetRec() {
