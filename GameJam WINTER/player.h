@@ -13,7 +13,7 @@ public:
 	Rectangle GetAttackRect() const;
 
 	void Attack(Gob& gob, Gob2& gob2,Oak& oak, Item& bush);
-	void UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakRec, Rectangle itemRec, Gob& gob, Gob2& gob2,Oak& oak, Item& potion);
+	void UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakRec, Rectangle potionRec, Rectangle armoryRec, Gob& gob, Gob2& gob2,Oak& oak, Item& potion, Item& armory);
 	int GetHP() const;
 
 	float Player_Pos_X = 0;

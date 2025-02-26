@@ -28,7 +28,8 @@ int main() {
 	Oak oak[NUM_OAKS];
 	//부쉬 수 = 아이템 수
 	Item bush[NUM_ITEMS];
-	Item item[NUM_ITEMS];
+	Item potion[NUM_ITEMS];
+	Item armory[NUM_ITEMS];
 
 	Map map;
 	Castle castle;
@@ -78,9 +79,9 @@ int main() {
 			if (bushesSpawned < NUM_ITEMS && elapsedTime >= bushesSpawned * spawnItemInterval) {
 
 				bush[bushesSpawned].bush_Pos_X = GetRandomValue(50, 750);
-				item[itemsSpawned].item_Pos_X = bush[bushesSpawned].bush_Pos_X;
+				potion[itemsSpawned].item_Pos_X = bush[bushesSpawned].bush_Pos_X+5;
 				bush[bushesSpawned].bush_Pos_Y = GetRandomValue(50,550);
-				item[itemsSpawned].item_Pos_Y = bush[bushesSpawned].bush_Pos_Y;
+				potion[itemsSpawned].item_Pos_Y = bush[bushesSpawned].bush_Pos_Y+5;
 				bush[bushesSpawned].bush_active = true;
 				bushesSpawned++;
 				itemsSpawned++;
@@ -111,6 +112,10 @@ int main() {
 				castle.UpdateCollision(gob[i].GetRec(), gob2[i].GetRec(),oak[i].GetRec(), gob[i], gob2[i], oak[i]);
 
 			}
+		}
+
+		for (int i = 0; i < NUM_ITEMS; i++) {
+			player.UpdateCollision(gob[i].GetRec(), gob2[i].GetRec(), oak[i].GetRec(), potion[i].GetRec(), armory[i].GetRec(), gob[i], gob2[i], oak[i], potion[i], armory[i]);
 		}
 		
 		Rectangle castleRec = castle.GetRec();
@@ -161,7 +166,7 @@ int main() {
 				bush[i].bush_Draw();
 			}
 			else if(bush[i].hp == 0) {
-				item[i].potion_Draw();
+				potion[i].potion_Draw();
 			}
 		}
 
