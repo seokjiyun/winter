@@ -8,11 +8,12 @@
 #include "castle.h"
 #include "witch.h"
 #include "oak.h"
-
+#include "item.h"
 
 const int NUM_GOBLINS = 10;
 const int NUM_WITCHES = 3;
 const int NUM_OAKS = 2;
+const int NUM_ITEMS = 5;
 
 int main() {
 
@@ -25,6 +26,9 @@ int main() {
 	Gob2 gob2[NUM_GOBLINS];
 	Witch witch[NUM_WITCHES];
 	Oak oak[NUM_OAKS];
+	//부쉬 수 = 아이템 수
+	Item bush[NUM_ITEMS];
+	Item item[NUM_ITEMS];
 
 	Map map;
 	Castle castle;
@@ -34,11 +38,13 @@ int main() {
 	int goblins2Spawned = 0;
 	int witchesSpawned = 0;
 	int oaksSpawned = 0;
-
+	int bushesSpawned = 0;
+	int itemsSpawned = 0;
+	
 	const float spawnGobInterval = 30.0f / NUM_GOBLINS;
 	const float spawnWitchInterval = 30.0f / NUM_WITCHES;
 	const float spawnOakInterval = 30.0f / NUM_OAKS;
-
+	const float spawnItemInterval = 30.0f / NUM_ITEMS;
 
 	while (!WindowShouldClose()) {
 		
@@ -69,7 +75,13 @@ int main() {
 				oaksSpawned++;
 			}
 
-				
+			if (bushesSpawned < NUM_ITEMS && elapsedTime >= bushesSpawned * spawnItemInterval) {
+
+				bush[bushesSpawned].bush_Pos_X = GetRandomValue(50, 750);
+				bush[bushesSpawned].bush_Pos_Y = GetRandomValue(50,550);
+				bush[bushesSpawned].active = true;
+				bushesSpawned++;
+			}
 			
 		
 		SetTargetFPS(60);
@@ -86,7 +98,7 @@ int main() {
 
 
 		for (int i = 0; i < NUM_GOBLINS; i++) {
-			player.Attack(gob[i], gob2[i], oak[i]);
+			player.Attack(gob[i], gob2[i], oak[i], bush[i]);
 		}
 
 		castle.Draw();
@@ -127,7 +139,7 @@ int main() {
 		}
 
 		for (int i = 0; i < NUM_GOBLINS; i++) {
-			player.Attack(gob[i], gob2[i],oak[i]);
+			player.Attack(gob[i], gob2[i],oak[i], bush[i]);
 		}
 
 		for (int i = 0; i < NUM_OAKS; i++) {
@@ -138,7 +150,17 @@ int main() {
 		}
 
 		for (int i = 0; i < NUM_OAKS; i++) {
-			player.Attack(gob[i], gob2[i], oak[i]);
+			player.Attack(gob[i], gob2[i], oak[i], bush[i]);
+		}
+
+		for (int i = 0; i < NUM_ITEMS; i++) {
+			if (bush[i].active && bush[i].hp > 0) {
+				bush[i].bush_Draw();
+			}
+		}
+
+		for (int i = 0; i < NUM_ITEMS; i++) {
+			player.Attack(gob[i], gob2[i], oak[i], bush[i]);
 		}
 
 		EndDrawing();
