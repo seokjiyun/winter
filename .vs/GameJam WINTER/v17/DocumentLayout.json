@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\oak.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\oak.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -15,20 +19,16 @@
       "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\item.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\oak.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\oak.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\castle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\castle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\castle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\castle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\oak.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\oak.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\oak.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|solutionrelative:GameJam WINTER\\oak.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{024BD684-F714-4F9A-8F37-09DC1B5A8B60}|GameJam WINTER\\GameJam WINTER.vcxproj|C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -54,33 +54,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "oak.cpp",
               "DocumentMoniker": "C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\Oak.cpp",
               "RelativeDocumentMoniker": "GameJam WINTER\\Oak.cpp",
               "ToolTip": "C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\Oak.cpp",
               "RelativeToolTip": "GameJam WINTER\\Oak.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-26T07:07:20.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "oak.h",
               "DocumentMoniker": "C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\Oak.h",
               "RelativeDocumentMoniker": "GameJam WINTER\\Oak.h",
               "ToolTip": "C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\Oak.h",
               "RelativeToolTip": "GameJam WINTER\\Oak.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-26T07:07:13.292Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "item.cpp",
               "DocumentMoniker": "C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\item.cpp",
               "RelativeDocumentMoniker": "GameJam WINTER\\item.cpp",
@@ -93,20 +93,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "item.h",
               "DocumentMoniker": "C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\item.h",
               "RelativeDocumentMoniker": "GameJam WINTER\\item.h",
               "ToolTip": "C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\item.h",
               "RelativeToolTip": "GameJam WINTER\\item.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-26T03:35:34.554Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "castle.cpp",
               "DocumentMoniker": "C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\castle.cpp",
               "RelativeDocumentMoniker": "GameJam WINTER\\castle.cpp",
@@ -114,12 +114,11 @@
               "RelativeToolTip": "GameJam WINTER\\castle.cpp",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-25T07:32:25.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T07:32:25.154Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "castle.h",
               "DocumentMoniker": "C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\castle.h",
               "RelativeDocumentMoniker": "GameJam WINTER\\castle.h",
@@ -127,8 +126,7 @@
               "RelativeToolTip": "GameJam WINTER\\castle.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-25T07:28:40.927Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T07:28:40.927Z"
             },
             {
               "$type": "Document",
@@ -140,8 +138,7 @@
               "RelativeToolTip": "GameJam WINTER\\player.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-24T06:29:48.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T06:29:48.746Z"
             },
             {
               "$type": "Document",
@@ -153,8 +150,7 @@
               "RelativeToolTip": "GameJam WINTER\\player.cpp",
               "ViewState": "AgIAAG0AAAAAAAAAAAAgwHoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-24T06:29:38.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T06:29:38.366Z"
             },
             {
               "$type": "Document",
@@ -164,7 +160,7 @@
               "RelativeDocumentMoniker": "GameJam WINTER\\main.cpp",
               "ToolTip": "C:\\Users\\lee\\Documents\\GitHub\\winter\\GameJam WINTER\\main.cpp",
               "RelativeToolTip": "GameJam WINTER\\main.cpp",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAE4AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAC8AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-24T06:29:12.063Z",
               "EditorCaption": ""

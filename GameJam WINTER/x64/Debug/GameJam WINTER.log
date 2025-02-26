@@ -5,9 +5,9 @@ C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\Oak.h(8,20): warning C4305: 
 C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\witch.h(24,22): warning C4305: 'initializing': truncation from 'double' to 'float'
   (compiling source file 'main.cpp')
   
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(59,51): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(65,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(73,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(81,52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(83,52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(63,51): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(69,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(77,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(85,52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(87,52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   GameJam WINTER.vcxproj -> C:\Users\lee\Documents\GitHub\winter\x64\Debug\GameJam WINTER.exe

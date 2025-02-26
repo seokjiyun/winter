@@ -49,6 +49,10 @@ int main() {
 
 	while (!WindowShouldClose()) {
 		
+
+		Image oak_Image = LoadImage("resources/oak.png");
+		Texture2D texture = LoadTextureFromImage(oak_Image);
+
 		float deltaTime = GetFrameTime();
 		elapsedTime += deltaTime;
 
@@ -173,7 +177,7 @@ int main() {
 		for (int i = 0; i < NUM_ITEMS; i++) {
 			player.Attack(gob[i], gob2[i], oak[i], bush[i]);
 		}
-
+		UnloadImage(oak_Image);
 		EndDrawing();
 	}
 	CloseWindow();

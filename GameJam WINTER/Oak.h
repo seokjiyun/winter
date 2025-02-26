@@ -10,7 +10,7 @@ public:
 	int Oak_Damage = 350;
 	void Oak_Draw();
 	void Oak_Move(Vector2 target);
-bool active = false;
+	bool active = false;
 	Rectangle GetRec();
 
 private:
