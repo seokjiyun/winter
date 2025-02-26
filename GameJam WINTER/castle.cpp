@@ -1,11 +1,7 @@
 #include "castle.h"
 #include "gob.h"
-
 #include "oak.h"
 #include "gob2.h"
-
-
-
 
 Castle::Castle() : width(100), height(100),hp(1000),gameover(false){
 
@@ -24,7 +20,7 @@ void Castle::UpdateCollision(Rectangle gobRec, Rectangle gob2Rec, Rectangle oakR
     Rectangle castleRec = { x, y, width, height };
     if (CheckCollisionRecs(castleRec, gobRec)) {
         if (hp > 0) {
-            hp -= 50;
+            hp -= gob.Gob_Damage;
             gob.hp = 0;
             if (hp <= 0) {
                 gameover = true;
@@ -34,7 +30,7 @@ void Castle::UpdateCollision(Rectangle gobRec, Rectangle gob2Rec, Rectangle oakR
 
     if (CheckCollisionRecs(castleRec, oakRec)) {
         if (hp > 0) {
-            hp -= 350;
+            hp -= oak.Oak_Damage;
             oak.hp = 0; if (hp <= 0) {
                 gameover = true;
             }

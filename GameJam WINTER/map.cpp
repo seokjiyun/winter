@@ -36,13 +36,13 @@ void Map::Map_Draw() {
     }
     switch (stage) {
     case 1: {
-        ClearBackground(RED);
+        ClearBackground(SKYBLUE);
         break; }
     case 2: {
         ClearBackground(YELLOW);
         break; }
     case 3: {
-        ClearBackground(GREEN);
+        ClearBackground(BLUE);
 
         break; }
     default: {

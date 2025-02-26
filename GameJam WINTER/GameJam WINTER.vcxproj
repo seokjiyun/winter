@@ -130,6 +130,7 @@
     <ClCompile Include="castle.cpp" />
     <ClCompile Include="gob.cpp" />
     <ClCompile Include="gob2.cpp" />
+    <ClCompile Include="item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="oak.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="castle.h" />
     <ClInclude Include="gob.h" />
     <ClInclude Include="gob2.h" />
+    <ClInclude Include="item.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="oak.h" />
     <ClInclude Include="player.h" />
