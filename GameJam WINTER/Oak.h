@@ -13,6 +13,11 @@ public:
 	bool active = false;
 	Rectangle GetRec();
 
+	Image oak_Img;
+	Texture oak_Txt;
+
+	void Image_Load();
+	void Image_Unload();
 private:
 	Color Oak_Color = DARKGREEN;
 	float Oak_Width = 70;

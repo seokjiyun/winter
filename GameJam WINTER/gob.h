@@ -15,6 +15,12 @@ public:
     int hp = 50; 
     bool active = false;
 
+    Image gob_Img;
+    Texture2D gob_Txt;
+
+    void Image_Load();
+    void Image_Unload();
+
 private:
     float Gob_Width = 30;
     float Gob_Height = 30;

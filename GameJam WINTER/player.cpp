@@ -48,7 +48,25 @@ void Player::Player_Move()
 }
 
 void Player::Player_Draw() {
-	DrawRectangle(Player_Pos_X, Player_Pos_Y, Player_R, Player_R, Player_Color);
+	Last_state = P_front;
+	Vector2 Player_Center = { Player_Pos_X - (P_back.width / 4), Player_Pos_Y - (P_back.height / 4) };
+	if (IsKeyDown(KEY_W)) {
+		DrawTextureEx(P_back, Player_Center, 1, 1, WHITE);
+		Last_state = P_back;
+	}
+	if (IsKeyDown(KEY_S)) {
+		DrawTextureEx(P_front, Player_Center, 1, 1, WHITE);
+		Last_state = P_front;
+	}
+	if (IsKeyDown(KEY_D)) {
+		DrawTextureEx(P_right, Player_Center, 1, 1, WHITE);
+		Last_state = P_right;
+	}
+	if (IsKeyDown(KEY_A)) {
+		DrawTextureEx(P_left, Player_Center, 1, 1, WHITE);
+		Last_state = P_left;
+	}
+	DrawTextureEx(Last_state, Player_Center, 1, 1, WHITE);
 	DrawText(TextFormat("Hp: %d", Player_HP), Player_Pos_X, Player_Pos_Y - 10, 10, HP_Color);
 }
 
@@ -129,4 +147,24 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakR
 
 int Player::GetHP() const{
 	return Player_HP;
+}
+
+void Player::Image_Load() {
+	
+	P_front = LoadTextureFromImage(Pfront);
+	P_back = LoadTextureFromImage(Pback);
+	P_right = LoadTextureFromImage(Pright);
+	P_left = LoadTextureFromImage(Pleft);
+	UnloadImage(Pfront);
+	UnloadImage(Pback);
+	UnloadImage(Pright);
+	UnloadImage(Pleft);
+}
+
+void Player::Image_Unload() {
+	
+	UnloadTexture(P_front);
+	UnloadTexture(P_back);
+	UnloadTexture(P_right);
+	UnloadTexture(P_left);
 }

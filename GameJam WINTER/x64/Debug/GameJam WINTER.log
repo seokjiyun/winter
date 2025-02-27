@@ -1,13 +1,13 @@
-﻿  main.cpp
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\Oak.h(8,20): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'main.cpp')
+﻿  gob.cpp
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\gob.cpp(8,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\gob.cpp(17,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\gob.cpp(17,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  oak.cpp
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.h(8,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'oak.cpp')
   
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\witch.h(24,22): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'main.cpp')
-  
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(63,51): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(69,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(77,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(85,52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(87,52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.cpp(8,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.cpp(16,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.cpp(16,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
   GameJam WINTER.vcxproj -> C:\Users\lee\Documents\GitHub\winter\x64\Debug\GameJam WINTER.exe

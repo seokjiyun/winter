@@ -14,7 +14,20 @@ public:
 
 	void Attack(Gob& gob, Gob2& gob2,Oak& oak, Item& bush);
 	void UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakRec, Rectangle potionRec, Rectangle armoryRec, Gob& gob, Gob2& gob2,Oak& oak, Item& potion, Item& armory);
+	void Image_Load();
+	void Image_Unload();
 	int GetHP() const;
+
+
+	Image   Pfront = LoadImage("resources/Pfront.png");
+	Image 	Pback = LoadImage("resources/Pback.png");
+	Image 	Pright = LoadImage("resources/Pright.png");
+	Image 	Pleft = LoadImage("resources/Pleft.png");
+	Texture2D P_front;
+	Texture2D P_back;
+	Texture2D P_right;
+	Texture2D P_left;
+	Texture2D Last_state;
 
 	float Player_Pos_X = 0;
 	float Player_Pos_Y = 0;
@@ -24,6 +37,7 @@ public:
 	Vector2 facingDirection = { 1, 0 };
 	Color HP_Color = WHITE;
 private:
+	
 	float Player_R = 50;
 	Color Player_Color = BLACK;
 };

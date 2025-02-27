@@ -47,11 +47,13 @@ int main() {
 	const float spawnOakInterval = 30.0f / NUM_OAKS;
 	const float spawnItemInterval = 30.0f / NUM_ITEMS;
 
+	player.Image_Load();
+	oak->Image_Load();
+	gob->Image_Load();
+
 	while (!WindowShouldClose()) {
 		
-
-		Image oak_Image = LoadImage("resources/oak.png");
-		Texture2D texture = LoadTextureFromImage(oak_Image);
+		
 
 		float deltaTime = GetFrameTime();
 		elapsedTime += deltaTime;
@@ -177,9 +179,12 @@ int main() {
 		for (int i = 0; i < NUM_ITEMS; i++) {
 			player.Attack(gob[i], gob2[i], oak[i], bush[i]);
 		}
-		UnloadImage(oak_Image);
+		
 		EndDrawing();
 	}
+	player.Image_Unload();
+	oak->Image_Unload();
+	gob->Image_Unload();
 	CloseWindow();
 	return 0;
 }

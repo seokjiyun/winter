@@ -3,7 +3,7 @@
 #include "oak.h"
 #include "gob2.h"
 
-Castle::Castle() : width(100), height(100),hp(1000),gameover(false){
+Castle::Castle() : width(100), height(100),hp(30000),gameover(false){
 
     x = (800 - width) / 2;
     y = (600 - height) / 2;

@@ -13,10 +13,20 @@ void Oak::Oak_Move(Vector2 target) {
 }
 
 void Oak::Oak_Draw() {
-	DrawRectangle(Oak_Pos_X, Oak_Pos_Y, Oak_Width, Oak_Height, Oak_Color);
+	DrawTexture(oak_Txt, Oak_Pos_X, Oak_Pos_Y, WHITE);
 	
 }
 
+void Oak::Image_Load() {
+	oak_Img = LoadImage("resources/oak.png");
+	oak_Txt = LoadTextureFromImage(oak_Img);
+	
+}
+
+void Oak::Image_Unload() {
+	UnloadImage(oak_Img);
+	UnloadTexture(oak_Txt);
+}
 Rectangle Oak::GetRec() {
 	return { Oak_Pos_X, Oak_Pos_Y, Oak_Width, Oak_Height };
 }
