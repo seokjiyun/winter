@@ -105,13 +105,28 @@ int main() {
 		}
 
 		castle.Draw();
+		
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			if (gob[i].active && gob[i].hp > 0) {
-
-				castle.UpdateCollision(gob[i].GetRec(), witch[i].GetRec(),oak[i].GetRec(), gob[i], witch[i], oak[i]);
-
+				
+				castle.UpdateCollision(gob[i].GetRec(), { 0,0,0,0 }, { 0,0,0,0 }, gob[i],  witch[0],  oak[0]);
 			}
 		}
+
+
+		for (int i = 0; i < NUM_WITCHES; i++) {
+			if (witch[i].active && witch[i].hp > 0) {
+				castle.UpdateCollision({ 0,0,0,0 }, witch[i].GetRec(), { 0,0,0,0 },  gob[0], witch[i],  oak[0]);
+			}
+		}
+
+
+		for (int i = 0; i < NUM_OAKS; i++) {
+			if (oak[i].active && oak[i].hp > 0) {
+				castle.UpdateCollision({ 0,0,0,0 }, { 0,0,0,0 }, oak[i].GetRec(),  gob[0],  witch[0], oak[i]);
+			}
+		}
+
 		
 		Rectangle castleRec = castle.GetRec();
 		Rectangle playerRec = player.GetRec();
@@ -140,7 +155,7 @@ int main() {
 		Vector2 player_CenterP = { player.Player_Pos_X - (player.P_back_t.width / 2), player.Player_Pos_Y - (player.P_back_t.height / 2) };
 		for (int i = 0; i < NUM_WITCHES; i++) {
 			if (witch[i].active && witch[i].hp > 0) {
-				witch[i].Witch_Move(player_CenterP);  //how to use extern???
+				witch[i].Witch_Move(player_CenterP); 
 				witch[i].Witch_UpdateAttack(player_CenterP);
 				witch[i].Witch_Draw();
 

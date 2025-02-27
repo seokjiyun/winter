@@ -5,7 +5,7 @@ class Oak {
 public:
 	float Oak_Pos_X = 350;
 	float Oak_Pos_Y = 500;
-	float Oak_Speed = 0.2;
+	float Oak_Speed = 0.2f;
 	int hp = 200;
 	int Oak_Damage = 350;
 	void Oak_Draw();

@@ -1,6 +1,7 @@
 #include "gob.h"
 #include <math.h>
 
+
 void Gob::Gob_Move(Vector2 target) {
  
     float dx = target.x - Gob_Pos_X;
@@ -19,7 +20,7 @@ void Gob::Gob_Draw() {
         gob_Txt = LoadTextureFromImage(gob_Img);
         DrawRectangleLinesEx(GetRec(), 1, RED);
         DrawTextureEx(gob_Txt,gob_Center, 1, 1, WHITE);
-        DrawText(TextFormat("HP: %d", hp), Gob_Pos_X, Gob_Pos_Y - 10, 10, DARKGREEN);
+        DrawText(TextFormat("HP: %d", hp), Gob_Pos_X-15, Gob_Pos_Y - 35, 10, DARKGREEN);
     }
 }
 
@@ -29,5 +30,5 @@ void Gob::gob_Unload() {
 }
 
 Rectangle Gob::GetRec() {
-    return { Gob_Pos_X - (gob_Txt.width/2), Gob_Pos_Y - (gob_Txt.height/2), float(gob_Txt.width), float(gob_Txt.height)};
+    return { Gob_Pos_X -20, Gob_Pos_Y - 25, float(gob_Txt.width- 40), float(gob_Txt.height- 10)};
 }

@@ -130,14 +130,12 @@ void Player::Attack(Gob& gob, Witch& witch, Oak& oak, Item& bush) {
 
 void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle OakRec, Rectangle ItemRec, Gob& gob, Witch& witch, Oak& oak, Item& potion)
 {
-	
-		Rectangle playerRec{ Player_Pos_X, Player_Pos_Y, Player_R, Player_R };
+		Rectangle playerRec = GetRec();
 		float currentTime = GetTime();
 
 
 		if (gob.hp > 0 && CheckCollisionRecs(playerRec, GobRec)) {
 			if (currentTime - lastDamageTime >= damageCooldown) {
-				gob.hp = 0;
 				Player_HP -= gob.Gob_Damage;
 				lastDamageTime = currentTime;
 			}
@@ -145,7 +143,6 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle Oak
 
 		if (oak.hp > 0 && CheckCollisionRecs(playerRec, OakRec)) {
 			if (currentTime - lastDamageTime >= damageCooldown) {
-				oak.hp = 0;
 				Player_HP -= oak.Oak_Damage;
 				lastDamageTime = currentTime;
 			}
@@ -161,7 +158,7 @@ int Player::GetHP() const{
 }
 
 Rectangle Player::GetRec() {
-	return {Player_Pos_X - (P_front_t.width/2), Player_Pos_Y - (P_front_t.height/2), float(P_front_t.width), float(P_front_t.height)};
+	return {Player_Pos_X-30, Player_Pos_Y-25, float(P_front_t.width-60), float(P_front_t.height-35)};
 }
 
 void Player::knight_Load() {

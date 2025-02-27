@@ -14,6 +14,10 @@ public:
     int GetHP() const;                    
     bool gameover ;
     int hp;
+
+    Image castle_Img;
+    Texture2D castle_Txt;
+
 private:
     float x;
     float y;

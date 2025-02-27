@@ -61,7 +61,7 @@ void Witch::Witch_Draw() {
     if (hp > 0) {
         DrawRectangleLinesEx(GetRec(), 1, RED);
         DrawTextureEx(firewitch_Txt, witch_Center, 1, 1, WHITE);
-        DrawText(TextFormat("HP: %d", hp), float(Witch_Pos_X), float(Witch_Pos_Y - 10), 10, ORANGE);
+        DrawText(TextFormat("HP: %d", hp), float(Witch_Pos_X-15), float(Witch_Pos_Y - 40), 10, ORANGE);
     }
     if (projectileActive) {
         DrawCircle((int)projPosX, (int)projPosY, projRadius, RED);
@@ -76,5 +76,5 @@ void Witch::witch_UnLoad() {
 }
 
 Rectangle Witch::GetRec() {
-    return { Witch_Pos_X - (icewitch_Txt.width/2), Witch_Pos_Y - (icewitch_Txt.height/2), float(firewitch_Txt.width), float(firewitch_Txt.height)};
+    return { Witch_Pos_X -35, Witch_Pos_Y - 30, float(firewitch_Txt.width-45), float(firewitch_Txt.height-20)};
 }

@@ -1,5 +1,5 @@
 #include"oak.h"
-#include"math.h"
+#include <math.h>
 
 void Oak::Oak_Move(Vector2 target) {
 	float dx = target.x - Oak_Pos_X;
@@ -13,11 +13,13 @@ void Oak::Oak_Move(Vector2 target) {
 
 void Oak::Oak_Draw() {
 	Vector2 oak_Center = { Oak_Pos_X - (oak_Txt.width / 4), Oak_Pos_Y - (oak_Txt.height / 4) };
-	DrawRectangleLinesEx(GetRec(), 1, RED);
-	DrawTextureEx(oak_Txt, oak_Center, 1, 1, WHITE);
-	DrawText(TextFormat("HP: %d", hp), Oak_Pos_X, Oak_Pos_Y, 10, RED);
-	oak_Img = LoadImage("oak.png");
-	oak_Txt = LoadTextureFromImage(oak_Img);
+	if (hp > 0) {
+		oak_Img = LoadImage("oak.png");
+		oak_Txt = LoadTextureFromImage(oak_Img);
+		DrawRectangleLinesEx(GetRec(), 1, RED);
+		DrawTextureEx(oak_Txt, oak_Center, 1, 1, WHITE);
+		DrawText(TextFormat("HP: %d", hp), Oak_Pos_X + 20, Oak_Pos_Y - 30, 10, RED);
+	}
 }
 
 void Oak::oak_Unload() {
@@ -26,5 +28,5 @@ void Oak::oak_Unload() {
 }
 
 Rectangle Oak::GetRec() {
-	return { Oak_Pos_X - (oak_Txt.width / 4), Oak_Pos_Y - (oak_Txt.height / 4), float(oak_Txt.width), float(oak_Txt.height) };
+	return { Oak_Pos_X , Oak_Pos_Y - 20, float(oak_Txt.width-75), float(oak_Txt.height-20) };
 }

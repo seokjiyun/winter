@@ -2,6 +2,7 @@
 #include "gob.h"
 #include "oak.h"
 #include "witch.h"
+#include "math.h"
 
 Castle::Castle() : width(100), height(100),hp(3000),gameover(false){
 
@@ -10,7 +11,11 @@ Castle::Castle() : width(100), height(100),hp(3000),gameover(false){
 }
 
 void Castle::Draw() {
-    DrawRectangle(x, y, width, height, BLACK);
+    Vector2 castleCenter = { x,y };
+    castle_Img = LoadImage("castle.png");
+    castle_Txt = LoadTextureFromImage(castle_Img);
+    DrawRectangleLinesEx(GetRec(), 1, RED);
+    DrawTextureEx(castle_Txt, castleCenter, 1, 1, WHITE);
     DrawText(TextFormat("Castle HP: %d", hp), x, y - 30, 20, WHITE);
 }
 
@@ -23,6 +28,7 @@ void Castle::UpdateCollision(Rectangle gobRec, Rectangle witchRec, Rectangle oak
             hp -= gob.Gob_Damage;
             gob.hp = 0;
             if (hp <= 0) {
+                hp = 0;
                 gameover = true;
             }
         }
@@ -31,7 +37,9 @@ void Castle::UpdateCollision(Rectangle gobRec, Rectangle witchRec, Rectangle oak
     if (CheckCollisionRecs(castleRec, oakRec)) {
         if (hp > 0) {
             hp -= oak.Oak_Damage;
-            oak.hp = 0; if (hp <= 0) {
+            oak.hp = 0; 
+            if (hp <= 0) {
+                hp = 0;
                 gameover = true;
             }
         }
@@ -40,6 +48,7 @@ void Castle::UpdateCollision(Rectangle gobRec, Rectangle witchRec, Rectangle oak
             if (hp > 0) {
                 hp -= 150;
                 if (hp <= 0) {
+                    hp = 0;
                     gameover = true;
                 }
             }
