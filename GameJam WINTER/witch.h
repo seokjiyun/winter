@@ -1,27 +1,37 @@
 #pragma once
-#include"raylib.h"
+#include "raylib.h"
 
 class Witch {
 public:
-	float Witch_Pos_X = 50;
-	float Witch_Pos_Y = 200;
+    void Witch_Move(Vector2 target);
+    void Witch_UpdateAttack(Vector2 playerCenter);
+    void Witch_Draw();
+    Rectangle GetRec();
 
-	void Witch_Draw();
-	void Witch_Move(Vector2 target);
-	void Witch_Attack(bool Collision); //collision with player or castle
+    Image icewitch_Img;
+    Image firewitch_Img;
+    Texture2D icewitch_Txt;
+    Texture2D firewitch_Txt;
 
-	//Witch attack
-	float Witch_AT_X = Witch_Pos_X;
-	float Witch_AT_Y = Witch_Pos_Y;
-	float Witch_AT_R = 1;
-	float Witch_AT_S = 2;
-	Color Witch_AT_C = RED;
+    void witch_UnLoad();
+    float Witch_Pos_X = 0;
+    float Witch_Pos_Y = 100;
+    int hp = 50;
+    int firewitch_Damage = 10;
+    int icewitch_Damage = 3;
+    bool active = false;
+
+    bool projectileActive = false;
+    float projPosX = 0;
+    float projPosY = 0;
+    float projSpeed = 100.0f;
+    float projRadius = 5.0f;
+    float attackCooldown = 0.0f;  
+    float attackInterval = 0.1f; 
+    float projDirX = 0.0f;
+    float projDirY = 0.0f;
 
 private:
-	Rectangle Get_Hit();
-	float Witch_Width = 50;
-	float Witch_Height = 50;
-	float Witch_Speed = 0.1;
-
-	Color Witch_color = PURPLE;
+    float Gob2_Speed = 0.4f;
+    Color Gob2_Color = BLACK;
 };

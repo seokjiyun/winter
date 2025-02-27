@@ -2,13 +2,13 @@
 #include "raylib.h"
 #include "gob.h"
 #include "oak.h"
-#include "gob2.h"
+#include "witch.h"
 
 class Castle {
 public:
     Castle();                              
     void Draw();                            
-    void UpdateCollision(Rectangle gobRec, Rectangle gob2Rec,Rectangle oakRec, Gob& gob, Gob2& gob2, Oak& oak);
+    void UpdateCollision(Rectangle gobRec, Rectangle witchRec,Rectangle oakRec, Gob& gob, Witch& witch, Oak& oak);
 
     Rectangle GetRec() const;             
     int GetHP() const;                    
