@@ -1,75 +1,37 @@
 ﻿  castle.cpp
-  gob.cpp
-  gob2.cpp
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\oak.h(8,20): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-  (소스 파일 'castle.cpp'을(를) 컴파일하는 중)
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.h(8,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'castle.cpp')
   
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\castle.cpp(13,32): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\castle.cpp(13,25): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\castle.cpp(13,22): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\castle.cpp(13,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\castle.cpp(14,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\castle.cpp(14,47): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\gob.cpp(8,20): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\gob.cpp(22,65): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\gob.cpp(22,44): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  item.cpp
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\item.cpp(4,52): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\item.cpp(4,40): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\item.cpp(4,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\item.cpp(4,16): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\item.cpp(10,25): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\item.cpp(10,13): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\item.cpp(14,25): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\item.cpp(14,13): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\castle.cpp(13,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\castle.cpp(13,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\castle.cpp(13,22): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\castle.cpp(13,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\castle.cpp(14,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\castle.cpp(14,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   main.cpp
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\Oak.h(8,20): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\Oak.h(8,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'main.cpp')
   
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\witch.h(24,22): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\witch.h(24,22): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'main.cpp')
   
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(60,51): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(66,54): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(74,48): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(82,52): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(84,52): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  map.cpp
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\oak.h(8,20): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-  (소스 파일 'map.cpp'을(를) 컴파일하는 중)
-  
-  oak.cpp
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\oak.h(8,20): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-  (소스 파일 'oak.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\oak.cpp(7,17): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\oak.cpp(18,48): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\oak.cpp(18,37): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(60,51): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(66,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(74,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(82,52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(84,52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   player.cpp
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\Oak.h(8,20): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-  (소스 파일 'player.cpp'을(를) 컴파일하는 중)
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\Oak.h(8,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'player.cpp')
   
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(25,16): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(54,71): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(54,44): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(103,120): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(103,107): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(103,96): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(103,50): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(134,21): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(151,23): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  witch.cpp
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\witch.h(24,22): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-  (소스 파일 'witch.cpp'을(를) 컴파일하는 중)
-  
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\witch.cpp(5,58): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\witch.cpp(5,45): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\witch.cpp(5,32): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\witch.cpp(5,19): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\witch.cpp(11,20): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\witch.cpp(25,28): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\witch.cpp(25,16): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-  GameJam WINTER.vcxproj -> C:\Users\user\Documents\GitHub\winter\x64\Debug\GameJam WINTER.exe
-  'pwsh.exe'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
-  배치 파일이 아닙니다.
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(25,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(54,71): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(54,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(103,120): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(103,107): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(103,96): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(103,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(134,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(153,23): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  GameJam WINTER.vcxproj -> C:\Users\lee\Documents\GitHub\winter\x64\Debug\GameJam WINTER.exe

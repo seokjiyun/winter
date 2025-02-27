@@ -19,7 +19,7 @@ public:
 	float Player_Pos_X = 0;
 	float Player_Pos_Y = 0;
 	float Player_Speed = 3;
-	int Player_HP = 300;
+	int Player_HP = 1000;
 
 	Image   P_front = LoadImage("player_front.png");
 	Texture2D P_front_t = LoadTextureFromImage(P_front);
