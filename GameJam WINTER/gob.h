@@ -17,7 +17,6 @@ public:
 
     Image gob_Img;
     Texture2D gob_Txt;
-    void gob_Load();
     void gob_Unload();
 
 private:

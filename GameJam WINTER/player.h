@@ -36,6 +36,13 @@ public:
 
 	Vector2 facingDirection = { 1, 0 };
 	Color HP_Color = WHITE;
+
+	float lastAttackTime = 0.0f;
+	float attackCooldown = 0.5f;
+
+	float lastDamageTime = 0.0f;  
+	float damageCooldown = 1.0f;
+
 private:
 	float Player_R = 50;
 	Color Player_Color = BLACK;

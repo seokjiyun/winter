@@ -13,10 +13,12 @@ void Gob::Gob_Move(Vector2 target) {
 }
 
 void Gob::Gob_Draw() {
+    Vector2 gob_Center = { Gob_Pos_X - (gob_Txt.width / 2), Gob_Pos_Y - (gob_Txt.height / 2) };
     if (hp > 0) {
         gob_Img = LoadImage("gob.png");
         gob_Txt = LoadTextureFromImage(gob_Img);
-        DrawTexture(gob_Txt,Gob_Pos_X - (gob_Txt.width / 4), Gob_Pos_Y - (gob_Txt.height / 4), WHITE);
+        DrawRectangleLinesEx(GetRec(), 1, RED);
+        DrawTextureEx(gob_Txt,gob_Center, 1, 1, WHITE);
         DrawText(TextFormat("HP: %d", hp), Gob_Pos_X, Gob_Pos_Y - 10, 10, DARKGREEN);
     }
 }
@@ -27,5 +29,5 @@ void Gob::gob_Unload() {
 }
 
 Rectangle Gob::GetRec() {
-    return { Gob_Pos_X, Gob_Pos_Y, Gob_Width, Gob_Height };
+    return { Gob_Pos_X - (gob_Txt.width/2), Gob_Pos_Y - (gob_Txt.height/2), float(gob_Txt.width), float(gob_Txt.height)};
 }
