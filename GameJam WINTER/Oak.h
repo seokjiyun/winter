@@ -14,7 +14,6 @@ public:
 	
 	Image oak_Img;
 	Texture2D oak_Txt;
-	void oak_Load();
 	void oak_Unload();
 	Rectangle GetRec();
 
