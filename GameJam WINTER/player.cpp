@@ -131,11 +131,11 @@ void Player::Attack(Gob& gob, Gob2& gob2, Oak& oak, Item& bush) {
 
 void Player::UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakRec, Rectangle ItemRec, Gob& gob, Gob2& gob2, Oak& oak, Item& potion)
 {
-	Rectangle playerRec{ Player_Pos_X, Player_Pos_Y, Player_R};
+	Rectangle playerRec{ Player_Pos_X, Player_Pos_Y, Player_R,Player_R };
 	if (gob.hp > 0) {
 		if (CheckCollisionRecs(playerRec, GobRec)) {
+			DrawText(TextFormat("Hp: %d", Player_HP), Player_Pos_X, Player_Pos_Y +20, 10, HP_Color);
 			Player_HP -= gob.Gob_Damage;
-			oak.hp = 0; 
 		}
 	}
 	if (oak.hp > 0) {

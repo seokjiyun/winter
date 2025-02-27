@@ -88,7 +88,19 @@ int main() {
 				itemsSpawned++;
 			}
 
-
+			for (int i = 0; i < NUM_GOBLINS; i++) {
+				
+				player.UpdateCollision(
+					gob[i].GetRec(),
+					gob2[i].GetRec(),
+					oak[i].GetRec(),
+					bush[i].GetRec(),
+					gob[i],
+					gob2[i],
+					oak[i],
+					bush[i]  
+				);
+			}
 			
 		
 		SetTargetFPS(60);

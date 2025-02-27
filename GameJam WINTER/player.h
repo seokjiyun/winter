@@ -37,6 +37,7 @@ public:
 	Vector2 facingDirection = { 1, 0 };
 	Color HP_Color = WHITE;
 private:
-	float Player_R = 50;
+	float Player_R = 80;
+	float Player_L = 60;
 	Color Player_Color = BLACK;
 };
