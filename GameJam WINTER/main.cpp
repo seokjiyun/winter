@@ -47,11 +47,9 @@ int main() {
 	const float spawnItemInterval = 30.0f / NUM_ITEMS;
 
 	player.knight_Load();
-	oak->oak_Load();
-	gob->gob_Load();
+	
 
 	while (!WindowShouldClose()) {
-		
 		float deltaTime = GetFrameTime();
 		elapsedTime += deltaTime;
 
