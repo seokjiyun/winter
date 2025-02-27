@@ -48,8 +48,27 @@ void Player::Player_Move()
 }
 
 void Player::Player_Draw() {
-	DrawRectangle(Player_Pos_X, Player_Pos_Y, Player_R, Player_R, Player_Color);
+	Vector2 Player_Center = { Player_Pos_X - (P_back_t.width / 2), Player_Pos_Y - (P_back_t.height / 2) };
+
+	DrawTextureEx(last_State, Player_Center, 1, 1, WHITE);
 	DrawText(TextFormat("Hp: %d", Player_HP), Player_Pos_X, Player_Pos_Y - 10, 10, HP_Color);
+
+	if (IsKeyDown(KEY_W)) {
+		DrawTextureEx(P_back_t, Player_Center, 1, 1, WHITE);
+		last_State = P_back_t;
+	}
+	if (IsKeyDown(KEY_S)) {
+		DrawTextureEx(P_front_t, Player_Center, 1, 1, WHITE);
+		last_State = P_front_t;
+	}
+	if (IsKeyDown(KEY_D)) {
+		DrawTextureEx(P_right_t, Player_Center, 1, 1, WHITE);
+		last_State = P_right_t;
+	}
+	if (IsKeyDown(KEY_A)) {
+		DrawTextureEx(P_left_t, Player_Center, 1, 1, WHITE);
+		last_State = P_left_t;
+	}
 }
 
 Rectangle Player::GetAttackRect() const {
@@ -81,7 +100,7 @@ Rectangle Player::GetAttackRect() const {
 			offsetX = (Player_R / 2) - (attackWidth / 2);
 		}
 	}
-	DrawRectangle(Player_Pos_X + offsetX, Player_Pos_Y + offsetY, attackWidth, attackHeight, RED);
+	DrawRectangle(Player_Pos_X - (P_back_t.width/4) + offsetX, Player_Pos_Y - (P_back_t.height/4) + offsetY, attackWidth, attackHeight, RED);
 	return { Player_Pos_X + offsetX, Player_Pos_Y + offsetY, attackWidth, attackHeight };
 }
 
@@ -123,4 +142,26 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakR
 
 int Player::GetHP() const{
 	return Player_HP;
+}
+
+void Player::knight_Load() {
+	P_front = LoadImage("player_front.png");
+	P_front_t = LoadTextureFromImage(P_front);
+	P_back = LoadImage("player_back.png");
+	P_back_t = LoadTextureFromImage(P_back);
+	P_right = LoadImage("player_right.png");
+	P_right_t = LoadTextureFromImage(P_right);
+	P_left = LoadImage("player_left.png");
+	P_left_t = LoadTextureFromImage(P_left);
+}
+
+void Player::knight_Unload() {
+	UnloadImage(P_front);
+	UnloadTexture(P_front_t);
+	UnloadImage(P_back);
+	UnloadTexture(P_back_t);
+	UnloadImage(P_right);
+	UnloadTexture(P_right_t);
+	UnloadImage(P_left);
+	UnloadTexture(P_left_t);
 }
