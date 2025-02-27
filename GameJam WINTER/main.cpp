@@ -124,7 +124,21 @@ int main() {
 			}
 
 		}
-	
+		
+		for (int i = 0; i < NUM_GOBLINS; i++) {
+
+			player.UpdateCollision(
+				gob[i].GetRec(),
+				gob2[i].GetRec(),
+				oak[i].GetRec(),
+				bush[i].GetRec(),
+				gob[i],
+				gob2[i],
+				oak[i],
+				bush[i]
+			);
+		}
+
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			if (gob2[i].active && gob2[i].hp > 0) {
 				gob2[i].Gob2_Move(castleCenter);

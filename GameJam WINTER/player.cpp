@@ -130,9 +130,11 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakR
 {
 	Rectangle playerRec{ Player_Pos_X, Player_Pos_Y, Player_R, Player_R};
 	if (gob.hp>0 && CheckCollisionRecs(playerRec, GobRec)) {
+		gob.hp = 0;
 		Player_HP -= gob.Gob_Damage;
 	}
 	if (oak.hp>0 && CheckCollisionRecs(playerRec, OakRec)) {
+		oak.hp = 0;
 		Player_HP -= oak.Oak_Damage;
 	}
 	if (CheckCollisionRecs(playerRec, ItemRec)) {

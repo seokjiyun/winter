@@ -26,5 +26,5 @@ void Oak::oak_Unload() {
 }
 
 Rectangle Oak::GetRec() {
-	return { Oak_Pos_X, Oak_Pos_Y, Oak_Width, Oak_Height };
+	return { Oak_Pos_X - (oak_Txt.width / 4), Oak_Pos_Y - (oak_Txt.height / 4), float(oak_Txt.width), float(oak_Txt.height) };
 }
