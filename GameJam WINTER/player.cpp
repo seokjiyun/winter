@@ -106,7 +106,8 @@ Rectangle Player::GetAttackRect() const {
 
 
 void Player::Attack(Gob& gob, Gob2& gob2, Oak& oak, Item& bush) {
-	if (IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_LEFT)){
+	if (IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_LEFT) &&
+		(GetTime() - lastAttackTime >= attackCooldown)){
 		Rectangle attackRect = GetAttackRect();
 		
 		if (CheckCollisionRecs(attackRect, gob.GetRec())) {
@@ -128,18 +129,28 @@ void Player::Attack(Gob& gob, Gob2& gob2, Oak& oak, Item& bush) {
 
 void Player::UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakRec, Rectangle ItemRec, Gob& gob, Gob2& gob2, Oak& oak, Item& potion)
 {
-	Rectangle playerRec{ Player_Pos_X, Player_Pos_Y, Player_R, Player_R};
-	if (gob.hp>0 && CheckCollisionRecs(playerRec, GobRec)) {
-		gob.hp = 0;
-		Player_HP -= gob.Gob_Damage;
-	}
-	if (oak.hp>0 && CheckCollisionRecs(playerRec, OakRec)) {
-		oak.hp = 0;
-		Player_HP -= oak.Oak_Damage;
-	}
-	if (CheckCollisionRecs(playerRec, ItemRec)) {
-		Player_HP += potion.potion_Heal;
-	}
+	
+		Rectangle playerRec{ Player_Pos_X, Player_Pos_Y, Player_R, Player_R };
+		float currentTime = GetTime();
+
+
+		if (gob.hp > 0 && CheckCollisionRecs(playerRec, GobRec)) {
+			if (currentTime - lastDamageTime >= damageCooldown) {
+				Player_HP -= gob.Gob_Damage;
+				lastDamageTime = currentTime;
+			}
+		}
+
+		if (oak.hp > 0 && CheckCollisionRecs(playerRec, OakRec)) {
+			if (currentTime - lastDamageTime >= damageCooldown) {
+				Player_HP -= oak.Oak_Damage;
+				lastDamageTime = currentTime;
+			}
+		}
+		if (CheckCollisionRecs(playerRec, ItemRec)) {
+			Player_HP += potion.potion_Heal;
+		}
+	
 }
 
 int Player::GetHP() const{
