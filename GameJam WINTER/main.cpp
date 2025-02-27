@@ -121,6 +121,7 @@ int main() {
 			if (gob[i].active && gob[i].hp > 0) {
 				gob[i].Gob_Move(castleCenter);
 				gob[i].Gob_Draw();
+
 			}
 
 		}
