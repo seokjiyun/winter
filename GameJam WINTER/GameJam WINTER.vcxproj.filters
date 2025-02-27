@@ -30,13 +30,10 @@
     <ClCompile Include="castle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="witch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="oak.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gob2.cpp">
+    <ClCompile Include="witch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="item.cpp">
@@ -56,13 +53,10 @@
     <ClInclude Include="castle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="witch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="oak.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gob2.h">
+    <ClInclude Include="witch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="item.h">

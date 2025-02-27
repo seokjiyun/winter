@@ -1,7 +1,7 @@
 #include "castle.h"
 #include "gob.h"
 #include "oak.h"
-#include "gob2.h"
+#include "witch.h"
 
 Castle::Castle() : width(100), height(100),hp(3000),gameover(false){
 
@@ -15,7 +15,7 @@ void Castle::Draw() {
 }
 
 
-void Castle::UpdateCollision(Rectangle gobRec, Rectangle gob2Rec, Rectangle oakRec, Gob& gob, Gob2& gob2, Oak& oak) {
+void Castle::UpdateCollision(Rectangle gobRec, Rectangle witchRec, Rectangle oakRec, Gob& gob, Witch& witch, Oak& oak) {
 
     Rectangle castleRec = { x, y, width, height };
     if (CheckCollisionRecs(castleRec, gobRec)) {
@@ -36,9 +36,9 @@ void Castle::UpdateCollision(Rectangle gobRec, Rectangle gob2Rec, Rectangle oakR
             }
         }
 
-        if (CheckCollisionRecs(castleRec, gob2Rec)) {
+        if (CheckCollisionRecs(castleRec, witchRec)) {
             if (hp > 0) {
-                hp -= 50;
+                hp -= 150;
                 if (hp <= 0) {
                     gameover = true;
                 }

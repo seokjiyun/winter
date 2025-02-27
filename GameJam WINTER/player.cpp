@@ -50,6 +50,7 @@ void Player::Player_Move()
 void Player::Player_Draw() {
 	Vector2 Player_Center = { Player_Pos_X - (P_back_t.width / 2), Player_Pos_Y - (P_back_t.height / 2) };
 
+	DrawRectangleLinesEx(GetRec(), 1, RED);
 	DrawTextureEx(last_State, Player_Center, 1, 1, WHITE);
 	DrawText(TextFormat("Hp: %d", Player_HP), Player_Pos_X, Player_Pos_Y - 10, 10, HP_Color);
 
@@ -105,15 +106,15 @@ Rectangle Player::GetAttackRect() const {
 }
 
 
-void Player::Attack(Gob& gob, Gob2& gob2, Oak& oak, Item& bush) {
+void Player::Attack(Gob& gob, Witch& witch, Oak& oak, Item& bush) {
 	if (IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_LEFT) &&
 		(GetTime() - lastAttackTime >= attackCooldown)){
 		Rectangle attackRect = GetAttackRect();
 		
 		if (CheckCollisionRecs(attackRect, gob.GetRec())) {
 			gob.hp -= 5;
-		}if (CheckCollisionRecs(attackRect, gob2.GetRec())) {
-			gob2.hp -= 5;
+		}if (CheckCollisionRecs(attackRect, witch.GetRec())) {
+			witch.hp -= 5;
 		}
 		if (CheckCollisionRecs(attackRect, oak.GetRec())) {
 			oak.hp -= 5;
@@ -127,7 +128,7 @@ void Player::Attack(Gob& gob, Gob2& gob2, Oak& oak, Item& bush) {
 	}
 }
 
-void Player::UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakRec, Rectangle ItemRec, Gob& gob, Gob2& gob2, Oak& oak, Item& potion)
+void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle OakRec, Rectangle ItemRec, Gob& gob, Witch& witch, Oak& oak, Item& potion)
 {
 	
 		Rectangle playerRec{ Player_Pos_X, Player_Pos_Y, Player_R, Player_R };
@@ -157,6 +158,10 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakR
 
 int Player::GetHP() const{
 	return Player_HP;
+}
+
+Rectangle Player::GetRec() {
+	return {Player_Pos_X - (P_front_t.width/2), Player_Pos_Y - (P_front_t.height/2), float(P_front_t.width), float(P_front_t.height)};
 }
 
 void Player::knight_Load() {

@@ -3,7 +3,6 @@
 #include "raylib.h"
 #include "player.h"
 #include "gob.h"
-#include "gob2.h"
 #include "map.h"
 #include "castle.h"
 #include "witch.h"
@@ -23,7 +22,6 @@ int main() {
 	Player player;
 	player.last_State = player.P_front_t;
 	Gob gob[NUM_GOBLINS];
-	Gob2 gob2[NUM_GOBLINS];
 	Witch witch[NUM_WITCHES];
 	Oak oak[NUM_OAKS];
 	//부쉬 수 = 아이템 수
@@ -61,11 +59,11 @@ int main() {
 				gob[goblinsSpawned].active = true;
 				goblinsSpawned++;
 			}
-			if (goblins2Spawned < NUM_GOBLINS && elapsedTime >= goblins2Spawned * spawnGobInterval) {
-				gob2[goblins2Spawned].Gob2_Pos_X = 0;
-				gob2[goblins2Spawned].Gob2_Pos_Y = GetRandomValue(50, 550);
-				gob2[goblins2Spawned].active = true;
-				goblins2Spawned++;
+			if (goblins2Spawned < NUM_WITCHES && elapsedTime >= witchesSpawned * spawnGobInterval) {
+				witch[witchesSpawned].Witch_Pos_X = 0;
+				witch[witchesSpawned].Witch_Pos_Y = GetRandomValue(50, 550);
+				witch[witchesSpawned].active = true;
+				witchesSpawned++;
 			}
 
 
@@ -103,63 +101,63 @@ int main() {
 
 
 		for (int i = 0; i < NUM_GOBLINS; i++) {
-			player.Attack(gob[i], gob2[i], oak[i], bush[i]);
+			player.Attack(gob[i], witch[i], oak[i], bush[i]);
 		}
 
 		castle.Draw();
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			if (gob[i].active && gob[i].hp > 0) {
 
-				castle.UpdateCollision(gob[i].GetRec(), gob2[i].GetRec(),oak[i].GetRec(), gob[i], gob2[i], oak[i]);
+				castle.UpdateCollision(gob[i].GetRec(), witch[i].GetRec(),oak[i].GetRec(), gob[i], witch[i], oak[i]);
 
 			}
 		}
 		
 		Rectangle castleRec = castle.GetRec();
+		Rectangle playerRec = player.GetRec();
 		Vector2 castleCenter = { castleRec.x + castleRec.width / 2, castleRec.y + castleRec.height / 2 };
+		Vector2 player_Center;
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			if (gob[i].active && gob[i].hp > 0) {
 				gob[i].Gob_Move(castleCenter);
 				gob[i].Gob_Draw();
-
 			}
-
 		}
 		
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 
 			player.UpdateCollision(
 				gob[i].GetRec(),
-				gob2[i].GetRec(),
+				witch[i].GetRec(),
 				oak[i].GetRec(),
 				bush[i].GetRec(),
 				gob[i],
-				gob2[i],
+				witch[i],
 				oak[i],
 				bush[i]
 			);
 		}
+		Vector2 player_CenterP = { player.Player_Pos_X - (player.P_back_t.width / 2), player.Player_Pos_Y - (player.P_back_t.height / 2) };
+		for (int i = 0; i < NUM_WITCHES; i++) {
+			if (witch[i].active && witch[i].hp > 0) {
+				witch[i].Witch_Move(player_CenterP);  //how to use extern???
+				witch[i].Witch_UpdateAttack(player_CenterP);
+				witch[i].Witch_Draw();
 
-		for (int i = 0; i < NUM_GOBLINS; i++) {
-			if (gob2[i].active && gob2[i].hp > 0) {
-				gob2[i].Gob2_Move(castleCenter);
-				gob2[i].Gob2_UpdateAttack(castleCenter);
-				gob2[i].Gob2_Draw();
+				if (witch[i].projectileActive) {
 
-				if (gob2[i].projectileActive) {
+					if (CheckCollisionCircleRec({ witch[i].projPosX, witch[i].projPosY }, witch[i].projRadius, playerRec)) {
 
-					if (CheckCollisionCircleRec({ gob2[i].projPosX, gob2[i].projPosY }, gob2[i].projRadius, castleRec)) {
+						player.Player_HP -= witch->firewitch_Damage;
 
-						castle.hp -= gob->Gob_Damage;
-
-						gob2[i].projectileActive = false;
+						witch[i].projectileActive = false;
 					}
 				}
 			}
 		}
 
 		for (int i = 0; i < NUM_GOBLINS; i++) {
-			player.Attack(gob[i], gob2[i],oak[i], bush[i]);
+			player.Attack(gob[i], witch[i],oak[i], bush[i]);
 		}
 
 		for (int i = 0; i < NUM_OAKS; i++) {
@@ -170,7 +168,7 @@ int main() {
 		}
 
 		for (int i = 0; i < NUM_OAKS; i++) {
-			player.Attack(gob[i], gob2[i], oak[i], bush[i]);
+			player.Attack(gob[i], witch[i], oak[i], bush[i]);
 		}
 
 		for (int i = 0; i < NUM_ITEMS; i++) {
@@ -183,7 +181,7 @@ int main() {
 		}
 
 		for (int i = 0; i < NUM_ITEMS; i++) {
-			player.Attack(gob[i], gob2[i], oak[i], bush[i]);
+			player.Attack(gob[i], witch[i], oak[i], bush[i]);
 		}
 
 		EndDrawing();

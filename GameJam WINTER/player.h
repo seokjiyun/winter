@@ -1,19 +1,20 @@
 #pragma once
 #include"raylib.h"
 #include "gob.h" 
-#include "gob2.h" 
 #include "Oak.h" 
+#include "witch.h"
 #include "item.h"
 
 class Player {
 public:
 	void Player_Move();
 	void Player_Draw();
-
+	
 	Rectangle GetAttackRect() const;
+	Rectangle GetRec();
 
-	void Attack(Gob& gob, Gob2& gob2,Oak& oak, Item& bush);
-	void UpdateCollision(Rectangle GobRec, Rectangle Gob2Rec, Rectangle OakRec, Rectangle itemRec, Gob& gob, Gob2& gob2,Oak& oak, Item& potion);
+	void Attack(Gob& gob, Witch& witch,Oak& oak, Item& bush);
+	void UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle OakRec, Rectangle itemRec, Gob& gob, Witch& witch,Oak& oak, Item& potion);
 	int GetHP() const;
 
 	float Player_Pos_X = 0;
@@ -21,14 +22,32 @@ public:
 	float Player_Speed = 3;
 	int Player_HP = 1000;
 
+	//플레이어 공격(검)
+	Image   atk1 = LoadImage("atk1.png");
+	Image	atk2 = LoadImage("atk2.png");
+	Image	atk3 = LoadImage("atk3.png");
+	//플레이어 공격(창)
+	Image   Latk1 = LoadImage("Latk1.png");
+	Image	Latk2 = LoadImage("Latk2.png");
+	Image	Latk3 = LoadImage("Latk3.png");
+	//플레이어
 	Image   P_front = LoadImage("player_front.png");
-	Texture2D P_front_t = LoadTextureFromImage(P_front);
 	Image   P_back = LoadImage("player_back.png");
-	Texture2D P_back_t = LoadTextureFromImage(P_back);
 	Image   P_right = LoadImage("player_right.png");
-	Texture2D P_right_t = LoadTextureFromImage(P_right);
 	Image   P_left = LoadImage("player_left.png");
+
+	Texture2D atk1_t = LoadTextureFromImage(atk1);
+	Texture2D atk2_t = LoadTextureFromImage(atk2);
+	Texture2D atk3_t = LoadTextureFromImage(atk3);
+	Texture2D Latk1_t = LoadTextureFromImage(Latk1);
+	Texture2D Latk2_t = LoadTextureFromImage(Latk2);
+	Texture2D Latk3_t = LoadTextureFromImage(Latk3);
+
+	Texture2D P_front_t = LoadTextureFromImage(P_front);
+	Texture2D P_back_t = LoadTextureFromImage(P_back);
+	Texture2D P_right_t = LoadTextureFromImage(P_right);
 	Texture2D P_left_t = LoadTextureFromImage(P_left);
+
 	Texture2D last_State;
 
 	void knight_Load();

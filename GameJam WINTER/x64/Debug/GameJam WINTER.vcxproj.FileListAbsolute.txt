@@ -1,3 +1,2 @@
 C:\Users\lee\source\repos\GameJam WINTER\GameJam WINTER\x64\Debug\GameJam .8356D8E3.Up2Date
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\x64\Debug\GameJam .8356D8E3.Up2Date
 C:\Users\user\Documents\GitHub\winter\GameJam WINTER\x64\Debug\GameJam WINTER.vcxproj.CopyComplete
