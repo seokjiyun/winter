@@ -21,7 +21,7 @@ int main() {
 
 	Color vcolor = WHITE;
 	Player player;
-
+	player.last_State = player.P_front_t;
 	Gob gob[NUM_GOBLINS];
 	Gob2 gob2[NUM_GOBLINS];
 	Witch witch[NUM_WITCHES];
@@ -46,8 +46,10 @@ int main() {
 	const float spawnOakInterval = 30.0f / NUM_OAKS;
 	const float spawnItemInterval = 30.0f / NUM_ITEMS;
 
+	player.knight_Load();
+	
+
 	while (!WindowShouldClose()) {
-		
 		float deltaTime = GetFrameTime();
 		elapsedTime += deltaTime;
 
@@ -171,6 +173,9 @@ int main() {
 
 		EndDrawing();
 	}
+	player.knight_Unload();
+	oak->oak_Unload();
+	gob->gob_Unload();
 	CloseWindow();
 	return 0;
 }

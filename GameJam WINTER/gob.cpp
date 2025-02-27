@@ -14,8 +14,16 @@ void Gob::Gob_Move(Vector2 target) {
 
 void Gob::Gob_Draw() {
     if (hp > 0) {
-        DrawRectangle(Gob_Pos_X, Gob_Pos_Y, Gob_Width, Gob_Height, Gob_Color);
+        gob_Img = LoadImage("gob.png");
+        gob_Txt = LoadTextureFromImage(gob_Img);
+        DrawTexture(gob_Txt,Gob_Pos_X - (gob_Txt.width / 4), Gob_Pos_Y - (gob_Txt.height / 4), WHITE);
+        DrawText(TextFormat("HP: %d", hp), Gob_Pos_X, Gob_Pos_Y - 10, 10, DARKGREEN);
     }
+}
+
+void Gob::gob_Unload() {
+    UnloadImage(gob_Img);
+    UnloadTexture(gob_Txt);
 }
 
 Rectangle Gob::GetRec() {
