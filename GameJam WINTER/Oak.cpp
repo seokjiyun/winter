@@ -13,11 +13,12 @@ void Oak::Oak_Move(Vector2 target) {
 
 void Oak::Oak_Draw() {
 	Vector2 oak_Center = { Oak_Pos_X - (oak_Txt.width / 4), Oak_Pos_Y - (oak_Txt.height / 4) };
+	Oak_Color = WHITE;
 	if (hp > 0) {
 		oak_Img = LoadImage("oak.png");
 		oak_Txt = LoadTextureFromImage(oak_Img);
 		DrawRectangleLinesEx(GetRec(), 1, RED);
-		DrawTextureEx(oak_Txt, oak_Center, 1, 1, WHITE);
+		DrawTextureEx(oak_Txt, oak_Center, 1, 1, Oak_Color);
 		DrawText(TextFormat("HP: %d", hp), Oak_Pos_X + 20, Oak_Pos_Y - 30, 10, RED);
 	}
 }

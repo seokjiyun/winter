@@ -18,10 +18,8 @@ public:
     Image gob_Img;
     Texture2D gob_Txt;
     void gob_Unload();
-
+    Color Gob_Color = WHITE;
 private:
-    float Gob_Width = 30;
-    float Gob_Height = 30;
     float Gob_Speed = 0.4f;
-    Color Gob_Color = GREEN;
+    
 };

@@ -30,8 +30,8 @@ public:
     float attackInterval = 0.1f; 
     float projDirX = 0.0f;
     float projDirY = 0.0f;
-
+    Color Witch_Color = WHITE;
 private:
-    float Gob2_Speed = 0.4f;
-    Color Gob2_Color = BLACK;
+    float Witch_Speed = 0.4f;
+    
 };

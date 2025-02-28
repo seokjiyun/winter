@@ -1,26 +1,5 @@
-﻿  item.cpp
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\item.cpp(6,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\item.cpp(6,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\item.cpp(12,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\item.cpp(12,13): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\item.cpp(16,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\item.cpp(16,13): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  main.cpp
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(62,51): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(68,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(76,48): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(84,52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(86,52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\main.cpp(138,11): warning C4101: 'player_Center': unreferenced local variable
-  player.cpp
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(25,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(55,71): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(55,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(104,120): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(104,107): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(104,96): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(104,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(134,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\player.cpp(151,23): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
+﻿  oak.cpp
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.cpp(7,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.cpp(22,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.cpp(22,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   GameJam WINTER.vcxproj -> C:\Users\lee\Documents\GitHub\winter\x64\Debug\GameJam WINTER.exe

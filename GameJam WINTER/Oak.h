@@ -16,9 +16,7 @@ public:
 	Texture2D oak_Txt;
 	void oak_Unload();
 	Rectangle GetRec();
-
+	Color Oak_Color = WHITE;
 private:
-	Color Oak_Color = DARKGREEN;
-	float Oak_Width = 70;
-	float Oak_Height = 150;
+	
 };

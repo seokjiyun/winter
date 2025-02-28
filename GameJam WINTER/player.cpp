@@ -119,9 +119,6 @@ void Player::Attack(Gob& gob, Witch& witch, Oak& oak, Item& bush) {
 		if (CheckCollisionRecs(attackRect, oak.GetRec())) {
 			oak.hp -= 5;
 		}
-		if (CheckCollisionRecs(attackRect, oak.GetRec())) {
-			oak.hp -= 5;
-		}
 		if (CheckCollisionRecs(attackRect, bush.GetRec())) {
 			bush.hp -= 5;
 		}
@@ -130,32 +127,37 @@ void Player::Attack(Gob& gob, Witch& witch, Oak& oak, Item& bush) {
 
 void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle OakRec, Rectangle ItemRec, Gob& gob, Witch& witch, Oak& oak, Item& potion)
 {
-		Rectangle playerRec = GetRec();
-		float currentTime = GetTime();
+	Rectangle playerRec = GetRec();
+	float currentTime = GetTime();
 
 
+	if ((currentTime - lastDamageTime) >= damageCooldown) {
 		if (gob.hp > 0 && CheckCollisionRecs(playerRec, GobRec)) {
-			if (currentTime - lastDamageTime >= damageCooldown) {
-				Player_HP -= gob.Gob_Damage;
-				lastDamageTime = currentTime;
-			}
+			gob.hp = 0;
+			Player_HP -= gob.Gob_Damage;
+			lastDamageTime = currentTime;
 		}
+		else return;
+	}
 
+	if (currentTime - lastDamageTime >= damageCooldown) {
 		if (oak.hp > 0 && CheckCollisionRecs(playerRec, OakRec)) {
-			if (currentTime - lastDamageTime >= damageCooldown) {
-				Player_HP -= oak.Oak_Damage;
-				lastDamageTime = currentTime;
-			}
+			oak.hp = 0;
+			Player_HP -= oak.Oak_Damage;
+			lastDamageTime = currentTime;
 		}
+		else return;
+	}
+	if (Player_HP < 1000) {
 		if (CheckCollisionRecs(playerRec, ItemRec)) {
 			Player_HP += potion.potion_Heal;
 		}
+		else return;
+	}
 	
 }
 
-int Player::GetHP() const{
-	return Player_HP;
-}
+
 
 Rectangle Player::GetRec() {
 	return {Player_Pos_X-30, Player_Pos_Y-25, float(P_front_t.width-60), float(P_front_t.height-35)};

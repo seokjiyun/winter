@@ -10,8 +10,8 @@ void Witch::Witch_Move(Vector2 target) {
 
     if (distance > 100.0f) {
         if (distance != 0) {
-            Witch_Pos_X += (dx / distance) * Gob2_Speed;
-            Witch_Pos_Y += (dy / distance) * Gob2_Speed;
+            Witch_Pos_X += (dx / distance) * Witch_Speed;
+            Witch_Pos_Y += (dy / distance) * Witch_Speed;
         }
     }
 }
@@ -53,6 +53,7 @@ void Witch::Witch_UpdateAttack(Vector2 playerCenter) {
 }
 
 void Witch::Witch_Draw() {
+    Witch_Color = WHITE;
     icewitch_Img = LoadImage("icewitch.png");
     firewitch_Img = LoadImage("firewitch.png");
     icewitch_Txt = LoadTextureFromImage(icewitch_Img);

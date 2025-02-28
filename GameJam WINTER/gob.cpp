@@ -14,12 +14,13 @@ void Gob::Gob_Move(Vector2 target) {
 }
 
 void Gob::Gob_Draw() {
+    Gob_Color = WHITE;
     Vector2 gob_Center = { Gob_Pos_X - (gob_Txt.width / 2), Gob_Pos_Y - (gob_Txt.height / 2) };
     if (hp > 0) {
         gob_Img = LoadImage("gob.png");
         gob_Txt = LoadTextureFromImage(gob_Img);
         DrawRectangleLinesEx(GetRec(), 1, RED);
-        DrawTextureEx(gob_Txt,gob_Center, 1, 1, WHITE);
+        DrawTextureEx(gob_Txt,gob_Center, 1, 1, Gob_Color);
         DrawText(TextFormat("HP: %d", hp), Gob_Pos_X-15, Gob_Pos_Y - 35, 10, DARKGREEN);
     }
 }
