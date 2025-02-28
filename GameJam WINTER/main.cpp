@@ -66,6 +66,7 @@ int main() {
 				goblinsSpawned++;
 			}
 			if (witchesSpawned < NUM_WITCHES && elapsedTime >= witchesSpawned * spawnGobInterval) {
+				
 				witch[witchesSpawned].Witch_Pos_X = 1;
 				witch[witchesSpawned].Witch_Pos_Y = GetRandomValue(50, 550);
 				witch[witchesSpawned].active = true;
@@ -145,19 +146,7 @@ int main() {
 			}
 		}
 		
-		for (int i = 0; i < NUM_GOBLINS; i++) {
-
-			player.UpdateCollision(
-				gob[i].GetRec(),
-				witch[i].GetRec(),
-				oak[i].GetRec(),
-				bush[i].GetRec(),
-				gob[i],
-				witch[i],
-				oak[i],
-				bush[i]
-			);
-		}
+		
 		
 		Vector2 player_CenterP = { player.Player_Pos_X - (player.P_back_t.width / 2), player.Player_Pos_Y - (player.P_back_t.height / 2) };
 		for (int i = 0; i < NUM_WITCHES; i++) {
@@ -187,6 +176,18 @@ int main() {
 				oak[i].Oak_Move(castleCenter);
 				oak[i].Oak_Draw();
 			}
+		}for (int i = 0; i < NUM_GOBLINS; i++) {
+
+			player.UpdateCollision(
+				gob[i].GetRec(),
+				witch[i].GetRec(),
+				oak[i].GetRec(),
+				bush[i].GetRec(),
+				gob[i],
+				witch[i],
+				oak[i],
+				bush[i]
+			);
 		}
 		for (int i = 0; i < NUM_OAKS; i++) {
 
@@ -222,8 +223,20 @@ int main() {
 		EndDrawing();
 	}
 	player.knight_Unload();
-	oak->oak_Unload();
-	gob->gob_Unload();
+
+	for (int i = 0; i < NUM_OAKS; i++) {
+		oak[i].oak_Unload();
+	}
+
+	for (int i = 0; i < NUM_GOBLINS; i++) {
+		gob[i].gob_Unload();
+	}
+
+	for (int i = 0; i < NUM_WITCHES; i++) {
+		witch[i].witch_UnLoad();
+	}
+	UnloadImage(background_Img);
+	UnloadTexture(background_Txt);
 	CloseWindow();
 	return 0;
 }

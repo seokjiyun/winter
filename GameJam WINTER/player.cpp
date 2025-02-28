@@ -131,17 +131,18 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle Oak
 	float currentTime = GetTime();
 
 
-	if ((currentTime - lastDamageTime) >= damageCooldown) {
+	
 		if (gob.hp > 0 && CheckCollisionRecs(playerRec, GobRec)) {
+			if ((currentTime - lastDamageTime) >= damageCooldown) {
 			gob.hp = 0;
 			Player_HP -= gob.Gob_Damage;
 			lastDamageTime = currentTime;
 		}
-		
 	}
 
-	if (currentTime - lastDamageTime >= damageCooldown) {
+	
 		if (oak.hp > 0 && CheckCollisionRecs(playerRec, OakRec)) {
+			if (currentTime - lastDamageTime >= damageCooldown) {
 			oak.hp = 0;
 			Player_HP -= oak.Oak_Damage;
 			lastDamageTime = currentTime;
@@ -155,7 +156,9 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle Oak
 	
 }
 
-
+int Player::GetHP() const {
+	return Player_HP;
+}
 
 Rectangle Player::GetRec() {
 	return {Player_Pos_X-30, Player_Pos_Y-25, float(P_front_t.width-60), float(P_front_t.height-35)};
