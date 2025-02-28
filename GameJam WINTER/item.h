@@ -5,11 +5,14 @@ class Item {
 public:
 	void bush_Draw();
 	void potion_Draw();
-	void armory_Draw();
-
+	void mace_Draw();
+	float mace_Pos_X;
+	float mace_Pos_Y;
 	Rectangle GetRec();
 	Image bush_Img;
+	Image mace_Img;
 	Texture2D bush_Txt;
+	Texture2D mace_Txt;
 
 	bool bush_active = false;
 	bool active = false;
@@ -18,7 +21,6 @@ public:
 	float bush_Pos_X;
 	float bush_Pos_Y;
 	float potion_Heal = 30;
-	float additional_Heal = 2;
 	int hp = 15;
 private:
 	float bush_Width = 30;

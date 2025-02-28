@@ -1,5 +1,1 @@
-﻿  oak.cpp
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.cpp(7,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.cpp(22,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\lee\Documents\GitHub\winter\GameJam WINTER\oak.cpp(22,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  GameJam WINTER.vcxproj -> C:\Users\lee\Documents\GitHub\winter\x64\Debug\GameJam WINTER.exe
+﻿  GameJam WINTER.vcxproj -> C:\Users\lee\Documents\GitHub\winter\x64\Debug\GameJam WINTER.exe
