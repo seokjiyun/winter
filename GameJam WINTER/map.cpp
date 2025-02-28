@@ -34,6 +34,9 @@ void Map::Map_Draw() {
     if (castlePtr != nullptr && castlePtr->gameover == true) {
         stage = 3;
     }
+    if (castlePtr != nullptr && castlePtr->gamewin == true) {
+        stage = 4;
+    }
     switch (stage) {
     case 1: {
         ClearBackground(SKYBLUE);
@@ -43,6 +46,10 @@ void Map::Map_Draw() {
         break; }
     case 3: {
         ClearBackground(BLUE);
+        break; }
+    
+    case 4: {
+        ClearBackground(WHITE);
 
         break; }
     default: {

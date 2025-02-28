@@ -13,6 +13,7 @@ public:
     Rectangle GetRec() const;             
     int GetHP() const;                    
     bool gameover ;
+    bool gamewin;
     int hp;
 
     Image castle_Img;

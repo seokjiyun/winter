@@ -1,4 +1,5 @@
 #include"player.h"
+#include"castle.h"
 #include <math.h>
 
 void Player::Player_Move()
@@ -10,6 +11,7 @@ void Player::Player_Move()
 	}
 
 	if (IsKeyDown(KEY_DOWN)) {
+	
 		moveDir.y += 1;
 	}
 
@@ -27,24 +29,32 @@ void Player::Player_Move()
 	}
 
 	if (IsKeyDown(KEY_W)) {
-		Player_Pos_Y -= Player_Speed;
-		Player_Pos_X_P = Player_Pos_X;
-		Player_Pos_Y_P = Player_Pos_Y;
+		if (Player_Pos_Y_P> 26) {
+			Player_Pos_Y -= Player_Speed;
+			Player_Pos_X_P = Player_Pos_X;
+			Player_Pos_Y_P = Player_Pos_Y;
+		}
 	}
 	if (IsKeyDown(KEY_S)) {
-		Player_Pos_Y += Player_Speed;
-		Player_Pos_X_P = Player_Pos_X;
-		Player_Pos_Y_P = Player_Pos_Y;
+		if (Player_Pos_Y_P < 570) {
+			Player_Pos_Y += Player_Speed;
+			Player_Pos_X_P = Player_Pos_X;
+			Player_Pos_Y_P = Player_Pos_Y;
+		}
 	}
 	if (IsKeyDown(KEY_D)) {
-		Player_Pos_X += Player_Speed;
-		Player_Pos_X_P = Player_Pos_X;
-		Player_Pos_Y_P = Player_Pos_Y;
+		if (Player_Pos_X_P < 770) {
+			Player_Pos_X += Player_Speed;
+			Player_Pos_X_P = Player_Pos_X;
+			Player_Pos_Y_P = Player_Pos_Y;
+		}
 	}
 	if (IsKeyDown(KEY_A)) {
-		Player_Pos_X -= Player_Speed;
-		Player_Pos_X_P = Player_Pos_X;
-		Player_Pos_Y_P = Player_Pos_Y;
+		if (Player_Pos_X_P > 31) {
+			Player_Pos_X -= Player_Speed;
+			Player_Pos_X_P = Player_Pos_X;
+			Player_Pos_Y_P = Player_Pos_Y;
+		}
 	}
 	if (IsKeyDown(KEY_LEFT_SHIFT)) {
 		Player_Speed = 7;
@@ -140,7 +150,7 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle Oak
 {
 	Rectangle playerRec = GetRec();
 	float currentTime = GetTime();
-
+	Castle castle;
 
 	
 		if (gob.hp > 0 && CheckCollisionRecs(playerRec, GobRec)) {
@@ -168,16 +178,14 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle Oak
 			return;
 		}
 		if (CheckCollisionRecs(playerRec, maceRec)) {
-
+			castle.gamewin = true;
 		}
 	}
 	
 	
 }
 
-int Player::GetHP() const {
-	return Player_HP;
-}
+
 
 Rectangle Player::GetRec() {
 	return {Player_Pos_X-30, Player_Pos_Y-25, float(P_front_t.width-60), float(P_front_t.height-35)};
