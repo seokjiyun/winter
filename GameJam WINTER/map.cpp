@@ -31,6 +31,9 @@ void Map::Map_Draw() {
     else if (IsKeyPressed(KEY_THREE)) {
         stage = 3;
     }
+    else if (IsKeyPressed(KEY_FOUR)) {
+        stage = 4;
+    }
     if (castlePtr != nullptr && castlePtr->gameover == true) {
         stage = 3;
     }
@@ -46,11 +49,12 @@ void Map::Map_Draw() {
         break; }
     case 3: {
         ClearBackground(BLUE);
+        
         break; }
     
     case 4: {
         ClearBackground(WHITE);
-
+        DrawText(TextFormat("GAMEWIN"), 100, 100, 100, BLUE);
         break; }
     default: {
 

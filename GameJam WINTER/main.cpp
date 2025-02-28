@@ -98,7 +98,7 @@ int main() {
 		player.Player_Draw();
 		player.Player_Move();
 
-
+		
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			player.Attack(gob[i], witch[i], oak[i], bush[i]);
 		}
@@ -222,7 +222,16 @@ int main() {
 		for (int i = 0; i < NUM_ITEMS; i++) {
 			player.Attack(gob[i], witch[i], oak[i], bush[i]);
 		}
-
+		if (map.GetStage() == 3) {
+			EndDrawing();
+			ClearBackground(BLACK);
+			DrawText(TextFormat("GAMEOVER"), 100, 100, 100, RED);
+		}
+		if (map.GetStage() == 4) {
+			EndDrawing();
+			ClearBackground(WHITE);
+			DrawText(TextFormat("GAMEWIN"), 100, 100, 100, BLUE);
+		}
 		EndDrawing();
 	}
 	player.knight_Unload();
