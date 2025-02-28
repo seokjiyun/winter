@@ -56,8 +56,7 @@ int main() {
 	while (!WindowShouldClose()) {
 		float deltaTime = GetFrameTime();
 		elapsedTime += deltaTime;
-		BeginDrawing();
-
+			
 		
 			if (goblinsSpawned < NUM_GOBLINS && elapsedTime >= goblinsSpawned * spawnGobInterval) {
 				gob[goblinsSpawned].Gob_Pos_X = 1;
@@ -71,12 +70,15 @@ int main() {
 				witch[witchesSpawned].active = true;
 				witchesSpawned++;
 			}
+
+
 			if (oaksSpawned < NUM_OAKS && elapsedTime >= oaksSpawned * spawnOakInterval) {
 				oak[oaksSpawned].Oak_Pos_X = GetRandomValue(50, 750);
 				oak[oaksSpawned].Oak_Pos_Y = 550;
 				oak[oaksSpawned].active = true;
 				oaksSpawned++;
 			}
+
 			if (bushesSpawned < NUM_ITEMS && elapsedTime >= bushesSpawned * spawnItemInterval) {
 				bush[bushesSpawned].bush_Pos_X = GetRandomValue(50, 750);
 				item[itemsSpawned].item_Pos_X = bush[bushesSpawned].bush_Pos_X;
@@ -96,14 +98,12 @@ int main() {
 		player.Player_Draw();
 		player.Player_Move();
 
-
+		
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			player.Attack(gob[i], witch[i], oak[i], bush[i]);
 		}
-			for (int i = 0;  i < NUM_OAKS; i++) {
-			player.Attack(gob[i], witch[i], oak[i], bush[i]);
-		}
 
+		
 		
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			if (gob[i].active && gob[i].hp > 0) {
@@ -111,6 +111,14 @@ int main() {
 				castle.UpdateCollision(gob[i].GetRec(), { 0,0,0,0 }, { 0,0,0,0 }, gob[i],  witch[0],  oak[0]);
 			}
 		}
+
+
+		for (int i = 0; i < NUM_WITCHES; i++) {
+			if (witch[i].active && witch[i].hp > 0) {
+				castle.UpdateCollision({ 0,0,0,0 }, witch[i].GetRec(), { 0,0,0,0 },  gob[0], witch[i],  oak[0]);
+			}
+		}
+
 
 		for (int i = 0; i < NUM_OAKS; i++) {
 			if (oak[i].active && oak[i].hp > 0) {
@@ -132,12 +140,6 @@ int main() {
 				gob[i].Gob_Draw();
 			}
 		}
-		for (int i = 0; i < NUM_OAKS; i++) {
-			if (oak[i].active && oak[i].hp > 0) {
-				oak[i].Oak_Move(castleCenter);
-				oak[i].Oak_Draw();
-			}
-		}
 		
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			for (int j = 0; j < NUM_ITEMS; j++) {
@@ -155,22 +157,6 @@ int main() {
 				);
 			}
 			
-		}
-		for (int i = 0; i < NUM_OAKS; i++) {
-			for (int j = 0; j < NUM_ITEMS; j++) {
-				player.UpdateCollision(
-					gob[i].GetRec(),
-					witch[i].GetRec(),
-					oak[i].GetRec(),
-					item[i].potionGetRec(),
-					item[i].maceGetRec(),
-					gob[i],
-					witch[i],
-					oak[i],
-					item[j - 1],
-					item[NUM_ITEMS]
-				);
-			}
 		}
 		
 		Vector2 player_CenterP = { player.Player_Pos_X - (player.P_back_t.width / 2), player.Player_Pos_Y - (player.P_back_t.height / 2) };
@@ -191,7 +177,35 @@ int main() {
 				}
 			}
 		}
+		for (int i = 0; i < NUM_OAKS; i++) {
+			player.Attack(gob[i], witch[i], oak[i], bush[i]);
+		}
 
+		
+		for (int i = 0; i < NUM_OAKS; i++) {
+			if (oak[i].active && oak[i].hp > 0) {
+				oak[i].Oak_Move(castleCenter);
+				oak[i].Oak_Draw();
+			}
+		}
+		for (int i = 0; i < NUM_OAKS; i++) {
+
+			for (int j = 0; j < NUM_ITEMS; j++) {
+				player.UpdateCollision(
+					gob[i].GetRec(),
+					witch[i].GetRec(),
+					oak[i].GetRec(),
+					item[i].potionGetRec(),
+					item[i].maceGetRec(),
+					gob[i],
+					witch[i],
+					oak[i],
+					item[j - 1],
+					item[NUM_ITEMS]
+				);
+			}
+		}
+		
 		for (int i = 0; i < NUM_ITEMS; i++) {
 			if (bush[i].bush_active && bush[i].hp > 0) {
 				bush[i].bush_Draw();
@@ -208,30 +222,18 @@ int main() {
 		for (int i = 0; i < NUM_ITEMS; i++) {
 			player.Attack(gob[i], witch[i], oak[i], bush[i]);
 		}
-		if (map.GetStage() == 1) {
-			ClearBackground(BLACK);
+		if (map.GetStage() == 3) {
 			EndDrawing();
-			continue;
-		}
-		if (map.GetStage() == 2) {
 			ClearBackground(BLACK);
-			EndDrawing();
-			continue;
+			DrawText(TextFormat("GAMEOVER"), 100, 100, 100, RED);
 		}
-		
-		ClearBackground(vcolor);
-		DrawTexture(background_Txt, 0, 0, WHITE);
-		map.Map_Draw();
-		player.Player_Draw();
-		player.Player_Move();
-
+		if (map.GetStage() == 4) {
+			EndDrawing();
+			ClearBackground(WHITE);
+			DrawText(TextFormat("GAMEWIN"), 100, 100, 100, BLUE);
+		}
 		EndDrawing();
-		
 	}
-	
-
-	
-
 	player.knight_Unload();
 	oak->oak_Unload();
 	gob->gob_Unload();
