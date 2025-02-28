@@ -165,10 +165,12 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle Oak
 		if (oak.hp > 0 && CheckCollisionRecs(playerRec, OakRec)) {
 			if (currentTime - lastDamageTime >= damageCooldown) {
 			oak.hp = 0;
-			Player_HP -= oak.Oak_Damage;
+			Player_HP -=  oak.Oak_Damage;
 			lastDamageTime = currentTime;
 		}
 	}
+
+
 	if  (Player_HP < 1000) {
 		if (CheckCollisionRecs(playerRec, ItemRec)) {
 		if (Player_HP > 1000) {

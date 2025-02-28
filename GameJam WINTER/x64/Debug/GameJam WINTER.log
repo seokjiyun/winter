@@ -1,13 +1,10 @@
-﻿  player.cpp
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(27,16): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(76,71): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(76,44): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(125,120): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(125,107): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(125,96): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(125,50): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(152,20): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Documents\GitHub\winter\GameJam WINTER\player.cpp(177,23): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  main.cpp
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(64,51): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(70,55): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(75,48): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(81,52): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(83,52): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\winter\GameJam WINTER\main.cpp(128,11): warning C4101: 'player_Center' :참조되지 않은 지역 변수입니다.
   GameJam WINTER.vcxproj -> C:\Users\user\Documents\GitHub\winter\x64\Debug\GameJam WINTER.exe
   'pwsh.exe'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
   배치 파일이 아닙니다.
