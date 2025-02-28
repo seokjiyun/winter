@@ -9,13 +9,15 @@ public:
 	float mace_Pos_X;
 	float mace_Pos_Y;
 	Rectangle GetRec();
+	Rectangle potionGetRec();
+	Rectangle maceGetRec();
 	Image bush_Img;
 	Image mace_Img;
 	Texture2D bush_Txt;
 	Texture2D mace_Txt;
 
 	bool bush_active = false;
-	bool active = false;
+	bool mace_active = false;
 	float item_Pos_X;
 	float item_Pos_Y;
 	float bush_Pos_X;
