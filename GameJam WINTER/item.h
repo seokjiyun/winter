@@ -8,7 +8,8 @@ public:
 	void armory_Draw();
 
 	Rectangle GetRec();
-
+	Image bush_Img;
+	Texture2D bush_Txt;
 
 	bool bush_active = false;
 	bool active = false;

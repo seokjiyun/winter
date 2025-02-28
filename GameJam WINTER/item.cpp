@@ -1,7 +1,9 @@
 #include"item.h"
 
 void Item::bush_Draw() {
-	DrawRectangle(bush_Pos_X, bush_Pos_Y, bush_Width, bush_Height, bush_Color);
+	bush_Img = LoadImage("bush.png");
+	bush_Txt = LoadTextureFromImage(bush_Img);
+	DrawTexture(bush_Txt, bush_Pos_X, bush_Pos_Y, WHITE);
 	item_Pos_X = bush_Pos_X;
 	item_Pos_Y = bush_Pos_Y;
 }

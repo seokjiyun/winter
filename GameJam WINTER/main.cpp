@@ -30,6 +30,10 @@ int main() {
 
 	Map map;
 	Castle castle;
+	Image background_Img;
+	Texture2D background_Txt;
+	background_Img = LoadImage("background.png");
+	background_Txt = LoadTextureFromImage(background_Img);
 
 	float elapsedTime = 0.0f;         
 	int goblinsSpawned = 0;  
@@ -92,7 +96,7 @@ int main() {
 		SetTargetFPS(60);
 		BeginDrawing();
 		ClearBackground(vcolor);
-
+		DrawTexture(background_Txt, 0, 0, WHITE);
 
 		map.Map_Draw();
 		map.SetCastle(&castle);
