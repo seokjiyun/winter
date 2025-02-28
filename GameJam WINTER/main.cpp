@@ -13,6 +13,8 @@ const int NUM_GOBLINS = 10;
 const int NUM_WITCHES = 3;
 const int NUM_OAKS = 2;
 const int NUM_ITEMS = 5;
+int mace_X;
+int mace_Y;
 
 int main() {
 
@@ -194,8 +196,12 @@ int main() {
 			if (bush[i].bush_active && bush[i].hp > 0) {
 				bush[i].bush_Draw();
 			}
-			else if(bush[i].hp == 0) {
-				item[i].potion_Draw();
+			if(bush[i].hp == 0) {
+				for (int j = 0; j < NUM_ITEMS-1; j++) {
+					item[j].potion_Draw();
+				}
+				item[NUM_ITEMS - 1].mace_Draw();
+				
 			}
 		}
 
