@@ -39,7 +39,7 @@ int main() {
 
 	float elapsedTime = 0.0f;         
 	int goblinsSpawned = 0;  
-	int goblins2Spawned = 0;
+
 	int witchesSpawned = 0;
 	int oaksSpawned = 0;
 	int bushesSpawned = 0;
@@ -60,13 +60,13 @@ int main() {
 		
 			if (goblinsSpawned < NUM_GOBLINS && elapsedTime >= goblinsSpawned * spawnGobInterval) {
 				
-				gob[goblinsSpawned].Gob_Pos_X = 0;
+				gob[goblinsSpawned].Gob_Pos_X = 1;
 				gob[goblinsSpawned].Gob_Pos_Y = GetRandomValue(50, 550);
 				gob[goblinsSpawned].active = true;
 				goblinsSpawned++;
 			}
-			if (goblins2Spawned < NUM_WITCHES && elapsedTime >= witchesSpawned * spawnGobInterval) {
-				witch[witchesSpawned].Witch_Pos_X = 0;
+			if (witchesSpawned < NUM_WITCHES && elapsedTime >= witchesSpawned * spawnGobInterval) {
+				witch[witchesSpawned].Witch_Pos_X = 1;
 				witch[witchesSpawned].Witch_Pos_Y = GetRandomValue(50, 550);
 				witch[witchesSpawned].active = true;
 				witchesSpawned++;
@@ -158,6 +158,7 @@ int main() {
 				bush[i]
 			);
 		}
+		
 		Vector2 player_CenterP = { player.Player_Pos_X - (player.P_back_t.width / 2), player.Player_Pos_Y - (player.P_back_t.height / 2) };
 		for (int i = 0; i < NUM_WITCHES; i++) {
 			if (witch[i].active && witch[i].hp > 0) {
@@ -176,22 +177,31 @@ int main() {
 				}
 			}
 		}
-
-		for (int i = 0; i < NUM_GOBLINS; i++) {
-			player.Attack(gob[i], witch[i],oak[i], bush[i]);
+		for (int i = 0; i < NUM_OAKS; i++) {
+			player.Attack(gob[i], witch[i], oak[i], bush[i]);
 		}
 
+		
 		for (int i = 0; i < NUM_OAKS; i++) {
 			if (oak[i].active && oak[i].hp > 0) {
 				oak[i].Oak_Move(castleCenter);
 				oak[i].Oak_Draw();
 			}
 		}
-
 		for (int i = 0; i < NUM_OAKS; i++) {
-			player.Attack(gob[i], witch[i], oak[i], bush[i]);
-		}
 
+			player.UpdateCollision(
+				gob[i].GetRec(),
+				witch[i].GetRec(),
+				oak[i].GetRec(),
+				bush[i].GetRec(),
+				gob[i],
+				witch[i],
+				oak[i],
+				bush[i]
+			);
+		}
+		
 		for (int i = 0; i < NUM_ITEMS; i++) {
 			if (bush[i].bush_active && bush[i].hp > 0) {
 				bush[i].bush_Draw();

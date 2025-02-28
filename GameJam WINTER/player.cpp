@@ -137,7 +137,7 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle Oak
 			Player_HP -= gob.Gob_Damage;
 			lastDamageTime = currentTime;
 		}
-		else return;
+		
 	}
 
 	if (currentTime - lastDamageTime >= damageCooldown) {
@@ -146,13 +146,11 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle Oak
 			Player_HP -= oak.Oak_Damage;
 			lastDamageTime = currentTime;
 		}
-		else return;
 	}
-	if (Player_HP < 1000) {
+	if  (Player_HP < 1000) {
 		if (CheckCollisionRecs(playerRec, ItemRec)) {
 			Player_HP += potion.potion_Heal;
 		}
-		else return;
 	}
 	
 }
