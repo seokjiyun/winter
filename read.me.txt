@@ -1,0 +1,5 @@
+We made a towerdefense game which includes find and protect
+In game, the player will move around the castle, protecting the castle from monsters
+There are five bushes which randomly spawned in the map
+The player should find the camoflaged bushes and acquire items.
+Mace which ends the game is also included in item packages.
