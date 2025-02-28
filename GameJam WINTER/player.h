@@ -14,11 +14,12 @@ public:
 	Rectangle GetRec();
 
 	void Attack(Gob& gob, Witch& witch,Oak& oak, Item& bush);
-	void UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle OakRec, Rectangle itemRec, Gob& gob, Witch& witch,Oak& oak, Item& potion);
-	int GetHP() const;
-
-	float Player_Pos_X = 0;
-	float Player_Pos_Y = 0;
+	void UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle OakRec, Rectangle itemRec, Rectangle maceRec, Gob& gob, Witch& witch,Oak& oak, Item& potion, Item& mace);
+	Item bush;
+	float Player_Pos_X = 200;
+	float Player_Pos_Y = 200;
+	float Player_Pos_X_P = 0;
+	float Player_Pos_Y_P = 0;
 	float Player_Speed = 3;
 	int Player_HP = 1000;
 

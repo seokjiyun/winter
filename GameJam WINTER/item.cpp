@@ -11,14 +11,23 @@ void Item::bush_Draw() {
 }
 
 void Item::potion_Draw() {
-	DrawCircle(item_Pos_X, item_Pos_Y, potion_Radius, potion_Color);
+	DrawCircle(bush_Pos_X, bush_Pos_Y, potion_Radius, potion_Color);
 }
 
 void Item::mace_Draw() {
-	DrawTexture(mace_Txt, item_Pos_X, item_Pos_Y, WHITE);
+	Vector2 mace_Center = { item_Pos_X, item_Pos_Y };
+	DrawTextureEx(mace_Txt, mace_Center, 1, 10, WHITE);
 }
 
 
 Rectangle Item::GetRec() {
 	return { bush_Pos_X, bush_Pos_Y, bush_Width, bush_Height};
+}
+
+Rectangle Item::potionGetRec() {
+	return { item_Pos_X, item_Pos_Y, float(mace_Txt.width), float(mace_Txt.height) };
+}
+
+Rectangle Item::maceGetRec() {
+	return { item_Pos_X, item_Pos_Y, float(mace_Txt.width), float(mace_Txt.height) };
 }

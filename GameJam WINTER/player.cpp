@@ -28,15 +28,23 @@ void Player::Player_Move()
 
 	if (IsKeyDown(KEY_W)) {
 		Player_Pos_Y -= Player_Speed;
+		Player_Pos_X_P = Player_Pos_X;
+		Player_Pos_Y_P = Player_Pos_Y;
 	}
 	if (IsKeyDown(KEY_S)) {
 		Player_Pos_Y += Player_Speed;
+		Player_Pos_X_P = Player_Pos_X;
+		Player_Pos_Y_P = Player_Pos_Y;
 	}
 	if (IsKeyDown(KEY_D)) {
 		Player_Pos_X += Player_Speed;
+		Player_Pos_X_P = Player_Pos_X;
+		Player_Pos_Y_P = Player_Pos_Y;
 	}
 	if (IsKeyDown(KEY_A)) {
 		Player_Pos_X -= Player_Speed;
+		Player_Pos_X_P = Player_Pos_X;
+		Player_Pos_Y_P = Player_Pos_Y;
 	}
 	if (IsKeyDown(KEY_LEFT_SHIFT)) {
 		Player_Speed = 7;
@@ -44,7 +52,10 @@ void Player::Player_Move()
 	if (IsKeyUp(KEY_LEFT_SHIFT)) {
 		Player_Speed = 3;
 	}
-
+	if (Player_Pos_X > GetScreenWidth() || Player_Pos_Y > GetScreenHeight() || Player_Pos_X < GetScreenWidth() || Player_Pos_Y < GetScreenHeight()) {
+		Player_Pos_X = Player_Pos_X_P;
+		Player_Pos_Y = Player_Pos_Y_P;
+	}
 }
 
 void Player::Player_Draw() {
@@ -125,7 +136,7 @@ void Player::Attack(Gob& gob, Witch& witch, Oak& oak, Item& bush) {
 	}
 }
 
-void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle OakRec, Rectangle ItemRec, Gob& gob, Witch& witch, Oak& oak, Item& potion)
+void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle OakRec, Rectangle ItemRec, Rectangle maceRec, Gob& gob, Witch& witch, Oak& oak, Item& potion, Item& mace)
 {
 	Rectangle playerRec = GetRec();
 	float currentTime = GetTime();
@@ -149,9 +160,17 @@ void Player::UpdateCollision(Rectangle GobRec, Rectangle WitchRec, Rectangle Oak
 	}
 	if  (Player_HP < 1000) {
 		if (CheckCollisionRecs(playerRec, ItemRec)) {
+		if (Player_HP > 1000) {
+			Player_HP = 1000;
+		}
 			Player_HP += potion.potion_Heal;
+			return;
+		}
+		if (CheckCollisionRecs(playerRec, maceRec)) {
+
 		}
 	}
+	
 	
 }
 

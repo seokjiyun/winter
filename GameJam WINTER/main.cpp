@@ -13,8 +13,7 @@ const int NUM_GOBLINS = 10;
 const int NUM_WITCHES = 3;
 const int NUM_OAKS = 2;
 const int NUM_ITEMS = 5;
-int mace_X;
-int mace_Y;
+
 
 int main() {
 
@@ -52,14 +51,14 @@ int main() {
 
 	player.knight_Load();
 	
+	map.SetCastle(&castle);
 
 	while (!WindowShouldClose()) {
 		float deltaTime = GetFrameTime();
 		elapsedTime += deltaTime;
-
+			
 		
 			if (goblinsSpawned < NUM_GOBLINS && elapsedTime >= goblinsSpawned * spawnGobInterval) {
-				
 				gob[goblinsSpawned].Gob_Pos_X = 1;
 				gob[goblinsSpawned].Gob_Pos_Y = GetRandomValue(50, 550);
 				gob[goblinsSpawned].active = true;
@@ -74,7 +73,6 @@ int main() {
 
 
 			if (oaksSpawned < NUM_OAKS && elapsedTime >= oaksSpawned * spawnOakInterval) {
-
 				oak[oaksSpawned].Oak_Pos_X = GetRandomValue(50, 750);
 				oak[oaksSpawned].Oak_Pos_Y = 550;
 				oak[oaksSpawned].active = true;
@@ -82,7 +80,6 @@ int main() {
 			}
 
 			if (bushesSpawned < NUM_ITEMS && elapsedTime >= bushesSpawned * spawnItemInterval) {
-
 				bush[bushesSpawned].bush_Pos_X = GetRandomValue(50, 750);
 				item[itemsSpawned].item_Pos_X = bush[bushesSpawned].bush_Pos_X;
 				bush[bushesSpawned].bush_Pos_Y = GetRandomValue(50,550);
@@ -92,16 +89,12 @@ int main() {
 				itemsSpawned++;
 			}
 
-
-			
-		
 		SetTargetFPS(60);
 		BeginDrawing();
 		ClearBackground(vcolor);
 		DrawTexture(background_Txt, 0, 0, WHITE);
-
+		castle.Draw();
 		map.Map_Draw();
-		map.SetCastle(&castle);
 		player.Player_Draw();
 		player.Player_Move();
 
@@ -110,7 +103,7 @@ int main() {
 			player.Attack(gob[i], witch[i], oak[i], bush[i]);
 		}
 
-		castle.Draw();
+		
 		
 		for (int i = 0; i < NUM_GOBLINS; i++) {
 			if (gob[i].active && gob[i].hp > 0) {
@@ -136,6 +129,9 @@ int main() {
 		
 		Rectangle castleRec = castle.GetRec();
 		Rectangle playerRec = player.GetRec();
+		Rectangle bushRec = item->GetRec();
+		Rectangle itemRec = item->potionGetRec();
+
 		Vector2 castleCenter = { castleRec.x + castleRec.width / 2, castleRec.y + castleRec.height / 2 };
 		Vector2 player_Center;
 		for (int i = 0; i < NUM_GOBLINS; i++) {
@@ -146,17 +142,21 @@ int main() {
 		}
 		
 		for (int i = 0; i < NUM_GOBLINS; i++) {
-
-			player.UpdateCollision(
-				gob[i].GetRec(),
-				witch[i].GetRec(),
-				oak[i].GetRec(),
-				bush[i].GetRec(),
-				gob[i],
-				witch[i],
-				oak[i],
-				bush[i]
-			);
+			for (int j = 0; j < NUM_ITEMS; j++) {
+				player.UpdateCollision(
+					gob[i].GetRec(),
+					witch[i].GetRec(),
+					oak[i].GetRec(),
+					item[i].potionGetRec(),
+					item[i].maceGetRec(),
+					gob[i],
+					witch[i],
+					oak[i],
+					item[j-1],
+					item[NUM_ITEMS]
+				);
+			}
+			
 		}
 		
 		Vector2 player_CenterP = { player.Player_Pos_X - (player.P_back_t.width / 2), player.Player_Pos_Y - (player.P_back_t.height / 2) };
@@ -190,16 +190,20 @@ int main() {
 		}
 		for (int i = 0; i < NUM_OAKS; i++) {
 
-			player.UpdateCollision(
-				gob[i].GetRec(),
-				witch[i].GetRec(),
-				oak[i].GetRec(),
-				bush[i].GetRec(),
-				gob[i],
-				witch[i],
-				oak[i],
-				bush[i]
-			);
+			for (int j = 0; j < NUM_ITEMS; j++) {
+				player.UpdateCollision(
+					gob[i].GetRec(),
+					witch[i].GetRec(),
+					oak[i].GetRec(),
+					item[i].potionGetRec(),
+					item[i].maceGetRec(),
+					gob[i],
+					witch[i],
+					oak[i],
+					item[j - 1],
+					item[NUM_ITEMS]
+				);
+			}
 		}
 		
 		for (int i = 0; i < NUM_ITEMS; i++) {
